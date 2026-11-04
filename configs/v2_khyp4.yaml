@@ -1,0 +1,6 @@
+base: v2_pwin_delta.yaml
+name: v2_khyp4
+# phase 2 control: K = 4 hypotheses for the next idea (relaxed winner-take-all on the JEPA distance, eps 0.05)
+# + a score head; the decoder is trained on the winning hypothesis, generation uses the best-scored one
+model: {k_hyp: 4}
+loss: {w_score: 0.1, khyp_eps: 0.05, khyp_select: oracle}

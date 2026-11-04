@@ -1,0 +1,5 @@
+base: v3_stepB_w3_prop.yaml
+name: v3_stepCp_w03_guard
+# chantier 3 bis §6 (notes §32.17): stage C on the step-1 PROP base, w 0.3, ORACLE guard (only valid decoded next deductions are pulled).
+# Re-encoding L_transcr on 25% of the deduction rows from step 2000 (of 4000); P re-run on detached E slots.
+loss: {w_transcr: 0.3, transcr_frac: 0.25, transcr_max_len: 24, transcr_detach_E: true, transcr_start_step: 2000, transcr_guard: oracle}

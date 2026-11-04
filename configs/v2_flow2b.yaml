@@ -1,0 +1,5 @@
+base: v2_pwin_delta.yaml
+name: v2_flow2b
+# phase 2b: flow head trained jointly with the whole model (context = P's slots, detached)
+model: {flow_head: true, flow_layers: 2, flow_norms: E}  # value norms at the E_ema scale (d3da017)
+loss: {w_flow: 1.0, flow_detach_ctx: true, flow_eval_steps: 8}

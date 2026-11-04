@@ -1,0 +1,4 @@
+base: v2_pwin_delta.yaml
+name: v2_pwin_delta_center
+# idea-memory keys/queries centred by a running mean before normalisation (shared key offset, 28/09)
+model: {z_read_layers: 3, erase: none, p_window: 2, idea_memory: delta, mem_center: true}

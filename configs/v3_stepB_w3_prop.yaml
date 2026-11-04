@@ -1,0 +1,5 @@
+base: v3_stepB_w3.yaml
+name: v3_stepB_w3_prop
+# chantier 3 bis step 1: the idea is the proposition. "since A , B ." -> "so B ." (rel = justified_by, rel_ptr = the
+# idea that stated A); labels stored, not used in the loss. PREPARED ONLY: no training without the research go-ahead
+data: {compound: conclusion}

@@ -1,0 +1,3 @@
+base: v2_khyp4.yaml
+name: v2_khyp16
+model: {k_hyp: 16}

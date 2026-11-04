@@ -1,0 +1,4 @@
+base: syn_base.yaml
+name: a3
+model: {erase: none}
+loss: {w_exh: 0.0}

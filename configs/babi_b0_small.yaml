@@ -1,0 +1,6 @@
+base: babi_b0.yaml
+name: babi_b0_small
+# Reference B0 at the size of the minimal recipe (~0.95 M): standard causal transformer on tokens, full context.
+model: {d: 88, n_layers: 8}
+train: {steps: 6000, snapshot_at: [1000, 2000, 3000, 4000, 5000]}
+data: {p_input_surface: random}

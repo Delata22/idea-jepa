@@ -1,0 +1,10 @@
+# Synthetic v2 (reasoning). Metrics on deduction ideas; L_jepa/L_contrib weighted 0.1 on premises.
+base: syn_base.yaml
+name: v2_base
+group: v2
+data:
+  kind: synthetic
+  path: data/reasoning
+  max_ideas: 24
+loss:
+  jepa_premise_weight: 0.1

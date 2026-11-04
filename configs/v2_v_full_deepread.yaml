@@ -1,0 +1,4 @@
+base: v2_v_full.yaml
+name: v2_v_full_deepread
+# fix 1: gated reads of the unerased Z_0 after each of the first 3 decoder blocks (+ residual read at the end)
+model: {z_read_layers: 3}

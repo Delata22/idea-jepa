@@ -1,0 +1,4 @@
+base: v3_stepA.yaml
+name: v3_stepA_wd0
+# control: same as stage A without word dropout
+model: {word_dropout: 0.0}

@@ -1,0 +1,6 @@
+base: v3_stepA.yaml
+name: v3_stepB_w3
+# §30 stage B: InfoNCE (T = 0.1) on E's slots [k ; v/|v|] (never keys alone); positives = other surface of the same
+# fact tuple (premise <-> deduction incl.) or the position a movement implies; negatives = rest of the batch, false
+# negatives masked
+loss: {w_nce: 0.3, nce_temp: 0.1}

@@ -1,0 +1,4 @@
+base: syn_base.yaml
+name: cap_r4
+model: {r: 4, d_slot: 64}
+loss: {w_sparse: 0.0}

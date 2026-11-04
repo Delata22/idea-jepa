@@ -1,0 +1,6 @@
+base: v3_stepB_w3.yaml
+name: v3_stepB_w3_qoracle
+# chantier 3 bis §5, ORACLE test of the query (ceiling, strong supervision): P's memory query for an F1 deduction is
+# pulled (softmax CE over the past ideas, T = 0.1, every memory layer) to the key of the premise stating the object's
+# position. Judge = F1 in free generation. Only if diag_query_keys shows a query blind to the object on B w3
+loss: {w_qoracle: 1.0, qoracle_temp: 0.1}

@@ -1,0 +1,3 @@
+base: syn_base.yaml
+name: a7
+loss: {w_jepa: 0.0}

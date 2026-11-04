@@ -1,0 +1,5 @@
+base: v3_stepB_w3_split_dropnce.yaml
+name: v3_stepB_w3_split_dropnce_od
+# notes §34.12 arm B: dropout positives (v3sd) with negatives ONLY from the other stories of the batch (no fact / template
+# label; story identity is known on any dataset): other surfaces of the same fact in the same story are never pushed apart
+loss: {nce_neg: other_docs}

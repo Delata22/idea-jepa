@@ -1,0 +1,4 @@
+base: v2_base_noerase.yaml
+name: v2_para
+# paraphrase invariance of E (same idea_id -> same slots)
+loss: {w_para: 1.0}

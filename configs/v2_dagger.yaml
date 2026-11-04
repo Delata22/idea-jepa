@@ -1,0 +1,5 @@
+base: v2_base_noerase.yaml
+name: v2_dagger
+# anti-repetition method 2: offline DAgger (one iteration) — reference chains + model prefixes corrected by the
+# generator's oracle; loss only on the oracle deduction of each corrected prefix
+data: {kind: synthetic, path: data/reasoning_dagger, max_ideas: 24}

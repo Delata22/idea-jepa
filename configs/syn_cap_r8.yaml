@@ -1,0 +1,5 @@
+base: syn_base.yaml
+name: cap_r8
+# H1 at equal slot capacity: r*d_slot = 256 (compare with A1: r=1, d_slot=256); no L_sparse
+model: {r: 8, d_slot: 32}
+loss: {w_sparse: 0.0}

@@ -1,0 +1,4 @@
+base: v2_form.yaml
+name: v2_form_para
+# separate form + paraphrase invariance of the idea values (keys untouched), if E keeps encoding the form
+loss: {w_para: 1.0, para_keys: false}

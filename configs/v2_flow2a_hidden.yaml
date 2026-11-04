@@ -1,0 +1,4 @@
+base: v2_flow2a.yaml
+name: v2_flow2a_hidden
+# flow context = P slot states before its regression head (instead of the regressed mean)
+model: {flow_ctx: hidden}

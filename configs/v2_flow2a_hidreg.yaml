@@ -1,0 +1,4 @@
+base: v2_flow2a.yaml
+name: v2_flow2a_hidreg
+# flow context = [P slot states ; regressed slots]
+model: {flow_ctx: hidden+reg}

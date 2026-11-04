@@ -1,0 +1,5 @@
+base: v3_stepB_w3_split.yaml
+name: v3_entnet_split
+# notes §34.3, architecture arm "EntNet write": P's memory = 16 slots per head with fixed learned keys, content-gated delta
+# writes (deltanet.entnet_scan); everything else as B w3 split. First target: moved objects of v2 (F1), then bAbI qa2
+model: {idea_memory: entnet, mem_slots: 16}

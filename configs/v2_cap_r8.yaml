@@ -1,0 +1,5 @@
+base: v2_v_full_deepread.yaml
+name: v2_cap_r8
+# equal-capacity H1 test on v2: 8 slots x 32 dims (= 256 total), no sparsity, deep read
+model: {z_read_layers: 3, r: 8, d_slot: 32}
+loss: {w_sparse: 0.0}

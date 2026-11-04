@@ -1,0 +1,4 @@
+base: v2_base_noerase.yaml
+name: v2_rep
+# anti-repetition method 1: repel P's prediction from ideas already stated (cos > 0.8)
+loss: {w_rep: 1.0, rep_margin: 0.8}

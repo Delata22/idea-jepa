@@ -1,0 +1,6 @@
+base: v2_b3.yaml
+name: clutrr_b3
+# CLUTRR reference B3 (sliding window 16 + DeltaNet memory), same data and budget as babi_im; depth set for parity of parameters with babi_im (~12.2 M)
+group: clutrr
+model: {n_layers: 11}
+data: {kind: synthetic, path: data/clutrr/train23_chain, max_ideas: 32, max_tokens: 600}

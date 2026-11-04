@@ -1,0 +1,5 @@
+base: v2_v_full_deepread.yaml
+name: v2_cap_r1
+# equal-capacity control: 1 slot x 256 dims, no sparsity, deep read
+model: {z_read_layers: 3, r: 1, d_slot: 256}
+loss: {w_sparse: 0.0}

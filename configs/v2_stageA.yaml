@@ -1,0 +1,6 @@
+base: v2_base_noerase.yaml
+name: v2_stageA
+# stage A: E + decoder (reconstruction only) + bidirectional masked-idea predictor; no causal P training
+model: {z_read_layers: 3, erase: none, mask_predictor: true}
+loss: {w_jepa: 0.0, w_mask: 1.0, w_para: 1.0, w_contrib: 0.0}
+train: {p_gen_max: 0.0, p_gen_ramp: 0.0}

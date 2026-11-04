@@ -1,0 +1,4 @@
+base: syn_base.yaml
+name: a15
+# sliding local window w=2 (receptive field 1+4*(2-1)=5 tokens): the residual must carry the sentence plan
+model: {local_window: 2}

@@ -1,0 +1,3 @@
+base: syn_base.yaml
+name: a9
+loss: {w_contrib: 0.0}

@@ -1,0 +1,4 @@
+base: v2_v_full_deepread.yaml
+name: v2_v_full_deepread_detach
+# fix 1 + fix 2: P consumes detached encoder slots (E trained by recon + as JEPA target only)
+model: {z_read_layers: 3, detach_P_inputs: true}

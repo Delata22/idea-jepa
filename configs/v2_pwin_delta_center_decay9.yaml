@@ -1,0 +1,4 @@
+base: v2_pwin_delta_center.yaml
+name: v2_pwin_delta_center_decay9
+# centred idea-memory keys + forget gate alpha = 0.9 (Gated DeltaNet): recover ordering (low premature) without losing addressing
+model: {mem_decay: 0.9}

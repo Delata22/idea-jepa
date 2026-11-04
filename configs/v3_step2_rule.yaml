@@ -1,0 +1,6 @@
+base: v3_step2_conn.yaml
+name: v3_step2_rule
+# chantier 3 bis step 2, arm "rule" = CEILING with supervision: every F2/F3 deduction is justified_by its licensing
+# premise (generator's rule); F1 (no generator antecedent): pointer to the useful premise of the object (the last
+# premise that fixed its location, as in diag_query_oracle); data.rel_f1: none keeps the connector labels in F1
+data: {rel_source: rule}

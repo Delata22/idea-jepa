@@ -1,0 +1,5 @@
+base: v3_plan_w3_detach.yaml
+name: v3_plan_w3_out
+# plan variable, detached head, and the plan injected AFTER P's blocks on the predicted block only (MLP, residual):
+# it enters neither the memory writes nor the attention of later blocks
+model: {plan_inject: output}

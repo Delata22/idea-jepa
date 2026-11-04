@@ -1,0 +1,4 @@
+base: v2_base_noerase.yaml
+name: v2_pwin_sum
+# "B3 at the idea level", plain sum memory (causal linear attention over past slot tokens)
+model: {z_read_layers: 3, erase: none, p_window: 2, idea_memory: sum}

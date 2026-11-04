@@ -1,0 +1,4 @@
+base: v2_base_noerase.yaml
+name: v2_full_delta
+# full causal attention over all past ideas PLUS the delta idea memory (is long attention redundant, complementary, or harmful?)
+model: {z_read_layers: 3, erase: none, p_window: 0, idea_memory: delta}

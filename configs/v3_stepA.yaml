@@ -1,0 +1,12 @@
+base: v2_pwin_delta.yaml
+name: v3_stepA
+group: v3
+# §30 stage A: idea space separated from the form.
+#  - the decoder is trained on the forms of each idea's ROLE ("so" + 2 clause forms for a deduction, premise
+#    form(s) for a premise); canonical text stream built from the first role form;
+#  - L_tok = -log sum_p exp(-CE_p) over those forms (both paths);
+#  - cross-encoding: the reconstruction Z reads a random surface of the fact (any template, premise form incl.);
+#  - word dropout 0.3 on the decoder's visible input tokens (training only).
+data: {surfaces: true}
+model: {word_dropout: 0.3}
+loss: {multi_form: true, cross_encode: true}

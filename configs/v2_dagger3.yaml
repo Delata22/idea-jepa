@@ -1,0 +1,4 @@
+base: v2_base_noerase.yaml
+name: v2_dagger3
+# offline DAgger, expert v3 (established = valid at their time; said = all true statements)
+data: {kind: synthetic, path: data/reasoning_dagger3, max_ideas: 24}

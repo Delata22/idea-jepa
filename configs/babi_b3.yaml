@@ -1,0 +1,6 @@
+base: v2_b3.yaml
+name: babi_b3
+# bAbI reference B3 (sliding window 16 + DeltaNet memory), same data and budget as babi_im; depth set for parity of parameters with babi_im (~12.2 M)
+group: babi
+model: {n_layers: 11}
+data: {kind: synthetic, path: data/babi/qa1_1k, max_ideas: 330, max_tokens: 2000}

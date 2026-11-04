@@ -1,0 +1,4 @@
+base: v2_base_noerase.yaml
+name: v2_pwin_delta
+# "B3 at the idea level", delta-rule memory (overwrite per learned key)
+model: {z_read_layers: 3, erase: none, p_window: 2, idea_memory: delta}

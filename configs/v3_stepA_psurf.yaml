@@ -1,0 +1,6 @@
+base: v3_stepA.yaml
+name: v3_stepA_psurf
+# stage A + P fed with random story surfaces: P's input ideas (and what its memory stores) are E(one of the
+# surfaces a story can show for the idea: 6 deduction templates / premise forms), drawn per idea and per step;
+# JEPA target unchanged (E_ema of the main form). "mix" = main form with p = 0.5.
+data: {p_input_surface: random}

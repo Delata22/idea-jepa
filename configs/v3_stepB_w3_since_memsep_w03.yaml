@@ -1,0 +1,5 @@
+base: v3_stepB_w3_since.yaml
+name: v3_stepB_w3_since_memsep_w03
+# F1 (§30.27 point 4): centred cosine between what P's memory WRITES (values, every layer) for same-template facts
+# about different entities of a story (the negatives of stage B) pushed below tau = 0.2: L = mean relu(cos - tau)^2
+loss: {w_memsep: 0.3, memsep_tau: 0.2, memsep_on: values}

@@ -1,0 +1,3 @@
+base: v2_stageB.yaml
+name: v2_stageB2
+train: {init_from: runs/v2/v2h_stageA2_s0/ckpt.pt, freeze: [E]}

@@ -1,0 +1,5 @@
+base: syn_base.yaml
+name: v_spec
+# literal spec objective: exhaustion loss on, no centring, softmax(q.k/sqrt(d))
+model: {read_scale: sqrt_d}
+loss: {w_exh: 1.0, w_center: 0.0, w_sparse: 0.05}

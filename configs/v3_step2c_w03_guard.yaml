@@ -1,0 +1,5 @@
+base: v3_step2_conn.yaml
+name: v3_step2c_w03_guard
+# chantier 3 bis §6: stage C on the clean base (step 2, arm "connector only"), ORACLE guard (only decoded sentences that are valid next deductions are pulled; ceiling with supervision).
+# Re-encoding L_transcr on 25% of the deduction rows from step 2000 (of 4000); P re-run on detached E slots.
+loss: {w_transcr: 0.3, transcr_frac: 0.25, transcr_max_len: 24, transcr_detach_E: true, transcr_start_step: 2000, transcr_guard: oracle}

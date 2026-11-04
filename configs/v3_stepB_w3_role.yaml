@@ -1,0 +1,4 @@
+base: v3_stepB_w3.yaml
+name: v3_stepB_w3_role
+# stage B + premise / deduction role embedding added to every idea at P's input (p_role_emb)
+model: {p_role_emb: true}

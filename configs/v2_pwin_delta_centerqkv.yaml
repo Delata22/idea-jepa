@@ -1,0 +1,4 @@
+base: v2_pwin_delta_center.yaml
+name: v2_pwin_delta_centerqkv
+# queries, keys AND values of the idea memory centred by running means
+model: {z_read_layers: 3, erase: none, p_window: 2, idea_memory: delta, mem_center: true, mem_center_v: true}

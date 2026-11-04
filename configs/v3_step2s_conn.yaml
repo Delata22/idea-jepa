@@ -1,0 +1,6 @@
+base: v3_stepB_w3_split.yaml
+name: v3_step2s_conn
+# chantier 3 bis step 2 on the SPLIT base (A as context then B, max_ideas 28), arm "connector" (see v3_step2_conn.yaml)
+model: {rel_cond: true}
+data: {rel_source: connector}
+loss: {w_rel: 1.0}

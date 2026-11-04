@@ -1,0 +1,10 @@
+base: babi_im.yaml
+name: babi_im_full_bow
+# notes §35.10 (user decision 30/09): rung (2a) (P attends to ALL past ideas, no delta memory) + bag-of-words keys:
+# in every attention block of P, 1/4 of each head's key dimensions = a learned per-head projection of the MEAN word embedding
+# of the sentence at that position (all its words, the question too); queries unchanged. No word list, nothing hard-coded:
+# the recipe candidate (the identity-key run babi_im_full_id is a diagnostic ceiling).
+model:
+  p_window: 0
+  idea_memory: none
+  p_bow_keys: true

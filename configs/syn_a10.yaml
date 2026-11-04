@@ -1,0 +1,3 @@
+base: syn_base.yaml
+name: a10
+loss: {w_sparse: 0.0}

@@ -1,0 +1,5 @@
+base: v2_base_noerase.yaml
+name: v2_stageB
+# stage B: causal P trained on the frozen stage-A encoder (fixed targets), decoder fine-tuned, CE through decoder
+model: {z_read_layers: 3, erase: none, mask_predictor: true}
+train: {init_from: runs/v2/v2h_stageA_s0/ckpt.pt, freeze: [E]}

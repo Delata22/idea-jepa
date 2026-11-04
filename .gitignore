@@ -1,0 +1,17 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.vscode/
+.idea/
+
+# experiment outputs (checkpoints, logs, evaluations)
+/runs/
+
+# data: downloaded and prepared by scripts/download_babi.sh and scripts/prepare_babi.py
+/data/
+
+# tool-specific files
+CLAUDE.md
+.claude/

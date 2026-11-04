@@ -1,0 +1,4 @@
+base: v2_flow2a.yaml
+name: v2_flow2a_cand
+# upper bound: flow target = random valid next deduction (random paraphrase) instead of the reference sentence
+loss: {flow_only: true, flow_eval_steps: 8, flow_target: candidates, flow_cand_meta: data/reasoning/meta.pt}

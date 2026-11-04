@@ -1,0 +1,4 @@
+base: v2_v_full_deepread.yaml
+name: v2_v_full_deepread_nojepa
+# prior-art test (RMT-like): P is a free summariser of the past trained by L_tok only (no JEPA target)
+loss: {w_jepa: 0.0}

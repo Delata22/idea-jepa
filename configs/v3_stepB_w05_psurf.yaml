@@ -1,0 +1,4 @@
+base: v3_stepB_w05.yaml
+name: v3_stepB_w05_psurf
+# stage B + P fed with random story surfaces (see v3_stepA_psurf.yaml)
+data: {p_input_surface: random}

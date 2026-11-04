@@ -1,0 +1,4 @@
+base: v2_flow2a.yaml
+name: v2_flow2a_40k
+# phase 2a, long schedule (L_flow still falling at 20k: 0.29): 40k steps, longer warmup, cosine to 5 %
+train: {steps: 40000, lr: 1.0e-3, warmup: 1000, min_lr_frac: 0.05, eval_every: 5000}

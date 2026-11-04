@@ -1,0 +1,4 @@
+base: syn_base.yaml
+name: a6b
+# e_t = fixed random unit vector per token: the word->direction map is not learned (honest H2 test)
+model: {e_mode: frozen}

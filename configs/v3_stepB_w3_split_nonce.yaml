@@ -1,0 +1,4 @@
+base: v3_stepB_w3_split.yaml
+name: v3_stepB_w3_split_nonce
+# notes §34.12 arm A: split view WITHOUT the contrastive term (w_nce = 0), everything else as B w3 split
+loss: {w_nce: 0.0}

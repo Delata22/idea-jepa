@@ -1,0 +1,4 @@
+base: v2_base.yaml
+name: v2_b3
+# sliding window 16 + DeltaNet memory per token (B3)
+model: {model: b3, n_layers: 10, window: 16}

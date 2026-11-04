@@ -1,0 +1,63 @@
+# Shared settings for the synthetic stage (stage 1).
+name: syn_base
+group: stage1
+data:
+  kind: synthetic
+  path: data/synthetic
+  max_ideas: 8
+model:
+  model: ideajepa
+  d: 256
+  n_heads: 4
+  r: 8
+  max_idea_len: 48
+  m_prefix: 3
+  enc_layers: 2
+  pred_layers: 4
+  dec_layers: 4
+  read_layers: 2       # only used by arch: deep
+  arch: parallel      # parallel (default) | deep
+  pre_read: false     # true = also read the UNERASED Z_0 before the last block (bypass, see REPORT 1a)
+  predictor: transformer  # transformer | mean (B1prime)
+  read_scale: learned     # sqrt_d = spec formula q.k/sqrt(d); learned temperature (init 8)
+  read_scale_init: 8.0
+  erase_norm: none
+  erase_rank: 1
+  beta_detach: false
+  stop_head: true      # closure criterion (user direction: full erasure not required; rho = measure)
+  out_window: 4
+  gate: true
+  erase: local        # local | global (A5) | none (A3) | free (A4)
+  e_mode: context     # context | static (A6)
+  read_mode: softmax  # softmax | linear (A12)
+  dropout: 0.0
+loss:
+  w_jepa: 1.0
+  w_vic: 1.0
+  vic_var: 1.0
+  vic_cov: 0.04
+  w_exh: 0.0          # spec: 1.0 (see syn_v_spec.yaml); 0 = rho is a measure only (REPORT 1a)
+  w_contrib: 1.0
+  p_contrib: 0.15
+  contrib_frac: 0.25
+  contrib_margin: 0.5
+  contrib_detach_noz: true
+  w_sparse: 0.01
+  w_center: 1.0       # added: removes constant slot offsets (see REPORT)
+  w_gate: 0.0         # optional reading cost (not in spec)
+  ema_tau: 0.996
+  tau: 0.1
+train:
+  steps: 4000
+  lr: 1.0e-3
+  warmup: 200
+  wd: 0.1
+  batch_tokens: 8192
+  grad_clip: 1.0
+  eval_every: 1000
+  eval_batches: 20
+  log_every: 25
+  p_gen_max: 0.5
+  p_gen_ramp: 0.2
+  seed: 0
+  time_limit: null

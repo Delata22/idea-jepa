@@ -1,0 +1,10 @@
+base: babi_im.yaml
+name: babi_im_mem_bow
+# notes §35.15: rung (1) (window 2 + delta memory) + bag-of-words keys in the delta MEMORY: the first 16 of the 64
+# write-key dimensions of each head RECEIVE, ADDED to the learned key (sum, not substitution: otherwise the sentence's place
+# enters the key and "last write wins" per person degrades), a learned per-head projection of the MEAN word embedding of the
+# sentence (all its words, the question too; no word list); memory queries and P's attention (window 2) unchanged.
+# NB: the attention version on (2a) (babi_im_full_bow) SUBSTITUTES the 16 dimensions; this one ADDS.
+model:
+  p_bow_keys: true
+  p_bow_where: mem

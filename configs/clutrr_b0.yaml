@@ -1,0 +1,7 @@
+base: v2_b0.yaml
+name: clutrr_b0
+# CLUTRR reference B0 (standard transformer, token level; lr 5e-4 as on v2), same data and budget as babi_im; depth set for parity of parameters with babi_im (~12.2 M)
+group: clutrr
+train: {lr: 5.0e-4}
+model: {n_layers: 15}
+data: {kind: synthetic, path: data/clutrr/train23_chain, max_ideas: 32, max_tokens: 600}

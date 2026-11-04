@@ -1,0 +1,5 @@
+base: v2_base.yaml
+name: v2_b1prime
+model: {predictor: mean, r: 1, erase: none}
+loss: {w_jepa: 0.0, w_exh: 0.0, w_contrib: 0.0, w_sparse: 0.0}
+train: {p_gen_max: 1.0, p_gen_ramp: 0.0}

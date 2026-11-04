@@ -1,0 +1,5 @@
+base: babi_im.yaml
+name: clutrr_im
+# CLUTRR (notes §34.6), Idea-JEPA v3sd recipe; text input, entity ids drawn per story; data.path data/clutrr/<set>_<variant>
+group: clutrr
+data: {path: data/clutrr/train23_chain, max_ideas: 32, max_tokens: 600}

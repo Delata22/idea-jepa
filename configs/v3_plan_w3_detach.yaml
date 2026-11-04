@@ -1,0 +1,4 @@
+base: v3_plan_w3.yaml
+name: v3_plan_w3_detach
+# plan variable with the pointer head on DETACHED P states and input slots (no gradient from L_plan into P / E)
+model: {plan_head_detach: true}

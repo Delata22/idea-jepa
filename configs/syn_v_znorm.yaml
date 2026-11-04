@@ -1,0 +1,4 @@
+base: syn_base.yaml
+name: v_znorm
+# Z rescaled per idea at the decoder input (same scale for P and E paths)
+model: {z_norm: idea}

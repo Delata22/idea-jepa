@@ -1,0 +1,3 @@
+base: syn_base.yaml
+name: b1
+model: {model: b1, n_layers: 13}

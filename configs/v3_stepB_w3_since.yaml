@@ -1,0 +1,5 @@
+base: v3_stepB_w3.yaml
+name: v3_stepB_w3_since
+# stage B w3 + restated forms "since A , B" (all clause forms of B) as InfoNCE positives of B, with A masked as
+# a false negative; NOT in the cross-encoding pool (the decoder is never asked to write "so B" from E(since A , B))
+data: {since_surfaces: nce}

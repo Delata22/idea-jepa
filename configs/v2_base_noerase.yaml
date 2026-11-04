@@ -1,0 +1,4 @@
+base: v2_v_full_deepread.yaml
+name: v2_base_noerase
+# 26/09 base: deep read, erasure disabled (rho was 0.94-0.98 everywhere: mechanism inert), O unused
+model: {z_read_layers: 3, erase: none}

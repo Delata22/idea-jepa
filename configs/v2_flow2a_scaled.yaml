@@ -1,0 +1,4 @@
+base: v2_flow2a.yaml
+name: v2_flow2a_scaled
+# the flow also models value norms: space [k ; v / e_slot_norm] instead of [k ; v/|v|] + norms supplied at sampling
+model: {flow_space: scaled}

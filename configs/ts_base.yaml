@@ -1,0 +1,21 @@
+# Stage 2: TinyStories, ~25M params.
+base: syn_base.yaml
+name: ts_base
+group: stage2
+data:
+  kind: tinystories
+  path: data/tinystories
+  max_ideas: 32
+  max_tokens: 512
+model:
+  d: 384
+  n_heads: 6
+train:
+  steps: 20000
+  lr: 6.0e-4
+  warmup: 1000
+  batch_tokens: 16384
+  eval_every: 2000
+  eval_batches: 40
+  log_every: 50
+  time_limit: null

@@ -1,0 +1,6 @@
+base: v2_pwin_delta.yaml
+name: ps_d7_l7_base
+group: pathstar
+# Path-Star (original protocol: N=100, fixed 200k train), Idea-JEPA base = windowed P + idea-level delta memory
+data: {kind: synthetic, path: data/pathstar_d7_l7, max_ideas: 48}
+model: {max_idea_len: 12}

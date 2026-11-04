@@ -1,0 +1,9 @@
+base: v3_stepB_w3.yaml
+name: babi_im
+# bAbI v1.2 (notes §34.6), portable Idea-JEPA recipe (v3sd): B w3 stage B with LABEL-FREE InfoNCE positives (dropout);
+# one idea per sentence, the question is an idea, the answer a templated deduction (scripts/prepare_babi.py). No compound
+# sentences in bAbI, so the split view is a no-op. data.path per task/regime: data/babi/<qa1|qa2|qa3>_<1k|10k>.
+# max_ideas 330 / max_tokens 2000: no truncation (qa3-10k: up to 321 ideas, 1 882 tokens), same for every model.
+group: babi
+data: {kind: synthetic, path: data/babi/qa1_1k, max_ideas: 330, max_tokens: 2000, surfaces: true, nce_positives: dropout}
+model: {enc_dropout: 0.1}

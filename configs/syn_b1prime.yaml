@@ -1,0 +1,6 @@
+base: syn_base.yaml
+name: b1prime
+# B1 + trivial summary: Z = mean of encoder slots of past ideas, r=1, no erasure, always generation path
+model: {predictor: mean, r: 1, erase: none}
+loss: {w_jepa: 0.0, w_exh: 0.0, w_contrib: 0.0, w_sparse: 0.0}
+train: {p_gen_max: 1.0, p_gen_ramp: 0.0}

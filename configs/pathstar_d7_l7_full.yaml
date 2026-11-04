@@ -1,0 +1,4 @@
+base: pathstar_d7_l7_base.yaml
+name: ps_d7_l7_full
+# P with full causal attention over all ideas (+ delta memory): is the limit search capacity?
+model: {max_idea_len: 12, p_window: 0}

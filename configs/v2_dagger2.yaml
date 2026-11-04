@@ -1,0 +1,4 @@
+base: v2_base_noerase.yaml
+name: v2_dagger2
+# offline DAgger, corrected expert (judges from the true state; only valid model statements count as said)
+data: {kind: synthetic, path: data/reasoning_dagger2, max_ideas: 24}

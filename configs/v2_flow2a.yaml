@@ -1,0 +1,8 @@
+base: v2_pwin_delta.yaml
+name: v2_flow2a
+# phase 2a: generative idea head by convergence (rectified flow). E, E_ema, P, O and the decoder come from a
+# trained delta checkpoint and are frozen; only the flow head is trained (fast path, no decoder pass).
+# NB: train.py's init_from copies E into E_ema (E is frozen, so the targets stay fixed).
+model: {flow_head: true, flow_layers: 2, flow_norms: E}  # value norms at the E_ema scale (d3da017)
+loss: {flow_only: true, flow_eval_steps: 8}
+train: {init_from: runs/v2/v2i_pwin_delta_s0/ckpt.pt, freeze: [E, P, O, dec], steps: 4000}

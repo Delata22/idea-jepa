@@ -1,0 +1,8 @@
+base: v3_stepB_w3_prop.yaml
+name: v3_step2_conn
+# chantier 3 bis step 2, arm "connector only": relation r (none / justified_by / sequence + pointer offset) at P's
+# input and given to the decoder with Z; P's head predicts r_{t+1}. Labels only where the text gives them (restated
+# "since" -> justified_by, "then" -> sequence). Control = v3_stepB_w3_prop (step 1 alone)
+model: {rel_cond: true}
+data: {rel_source: connector}
+loss: {w_rel: 1.0}

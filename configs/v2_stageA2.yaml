@@ -1,0 +1,4 @@
+base: v2_stageA.yaml
+name: v2_stageA2
+# stage A with L_para on values only (the key term collapsed the keys in v2_stageA)
+loss: {w_jepa: 0.0, w_mask: 1.0, w_para: 1.0, w_contrib: 0.0, para_keys: false}

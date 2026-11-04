@@ -1,0 +1,5 @@
+base: v3_stepB_w3.yaml
+name: v3_stepB_w3_split
+# chantier 3 bis step 1: "since A , B ." -> A (context only, train_w = 0) then "so B ." (rel_ptr -> A). Up to 26 ideas
+# per story > max_ideas 24: raised to 28 for this arm. PREPARED ONLY: no training without the research go-ahead
+data: {compound: split, max_ideas: 28}

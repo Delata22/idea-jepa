@@ -1,0 +1,5 @@
+base: v2_pwin_delta.yaml
+name: v2_form
+# "separate form": the surface template (connector x form, restatement) is given to the decoder; the idea
+# should carry the fact only. Generation draws the template at random among the 6 deduction templates.
+model: {form_cond: true, n_forms: 10}

@@ -1,0 +1,5 @@
+base: v3_stepB_w3_split_nonce.yaml
+name: v3_stepB_w3_split_nonce_psurf
+# notes §34.13 arm A (sans contrastif) with P trained on the REAL story surfaces (data.p_input_surface: random, "psurf"), the only
+# situation that exists on a public dataset
+data: {p_input_surface: random}

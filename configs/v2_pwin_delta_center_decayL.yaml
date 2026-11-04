@@ -1,0 +1,4 @@
+base: v2_pwin_delta_center.yaml
+name: v2_pwin_delta_center_decayL
+# centred idea-memory keys + forget gate alpha learned per head (init 0.95)
+model: {mem_decay: learned, mem_decay_init: 0.95}

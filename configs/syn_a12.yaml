@@ -1,0 +1,3 @@
+base: syn_base.yaml
+name: a12
+model: {read_mode: linear}

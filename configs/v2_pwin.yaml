@@ -1,0 +1,4 @@
+base: v2_base_noerase.yaml
+name: v2_pwin
+# control: P attends to the last 2 ideas only, no memory
+model: {z_read_layers: 3, erase: none, p_window: 2}

@@ -1,0 +1,5 @@
+base: v3_stepB_w3_split_dropnce_od.yaml
+name: v3_stepB_w3_split_dropnce_od_psurf
+# notes §34.13 arm B (dropout, négatifs hors histoire) with P trained on the REAL story surfaces (data.p_input_surface: random, "psurf"), the only
+# situation that exists on a public dataset
+data: {p_input_surface: random}

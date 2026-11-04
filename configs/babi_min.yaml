@@ -1,0 +1,7 @@
+base: babi_im.yaml
+name: babi_min
+# Minimal Idea-JEPA recipe used for the final bAbI table (0.92 M trainable parameters): d 64, encoder 1 layer, decoder 2,
+# 4 slots, predictor P 8 layers with a 2-idea window + delta memory read at every layer. 8192 tokens x 6000 steps.
+model: {d: 64, enc_layers: 1, dec_layers: 2, z_read_layers: 1, r: 4, pred_layers: 8}
+train: {steps: 6000, snapshot_at: [1000, 2000, 3000, 4000, 5000]}
+data: {p_input_surface: random}

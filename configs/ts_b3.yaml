@@ -1,0 +1,4 @@
+base: ts_base.yaml
+name: ts_b3
+# sliding window 16 + DeltaNet memory per token in every block (Fable's B3), params matched to V-full
+model: {model: b3, n_layers: 10, window: 16}

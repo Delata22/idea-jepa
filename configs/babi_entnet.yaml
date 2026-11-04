@@ -1,0 +1,4 @@
+base: babi_im.yaml
+name: babi_entnet
+# bAbI, Idea-JEPA v3sd recipe with the EntNet-style memory (16 slots per head)
+model: {idea_memory: entnet, mem_slots: 16}

@@ -1,0 +1,6 @@
+base: babi_b3.yaml
+name: babi_b3_small
+# Reference B3 at the size of the minimal recipe (~0.95 M): sliding window of 16 tokens + DeltaNet memory written at every token.
+model: {d: 76, n_layers: 8}
+train: {steps: 6000, snapshot_at: [1000, 2000, 3000, 4000, 5000]}
+data: {p_input_surface: random}

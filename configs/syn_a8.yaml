@@ -1,0 +1,3 @@
+base: syn_base.yaml
+name: a8
+loss: {ema_tau: 0.0, w_vic: 0.0}

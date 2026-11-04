@@ -1,0 +1,14 @@
+base: babi_im.yaml
+# DIAGNOSTIC, classes de mots codées en dur (décision utilisateur 30/09, notes §35.10) : plafond « et si le canal de lecture
+# avait l'identité », PAS une recette candidate ; à ne propager à aucun autre échelon.
+name: babi_im_full_id_DIAG
+# notes §35.9: rung (2a) (P attends to ALL past ideas, no delta memory) + identity keys. In every attention block
+# of P, 1/4 of each head's key dimensions = entity codes of the idea at that position: 1/8 first proper name (potential
+# carrier), 1/8 object noun (zeros if absent; a question has only its object). Weak supervision (word classes), listed here
+# in clear: every name and object noun of the bAbI qa1-3 vocabulary (data/babi/meta.pt: 4 names, 3 objects).
+model:
+  p_window: 0
+  idea_memory: none
+  p_id_keys:
+    names: [daniel, john, mary, sandra]
+    objects: [apple, football, milk]
