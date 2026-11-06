@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 580" width="980" height="580" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<style>.b{font-size:15px;font-weight:600} .s{font-size:12px} .m{font-size:14px;font-style:italic} .t{font-size:13px;font-family:ui-monospace, SFMono-Regular, Menlo, monospace} .lab{font-size:12px} .q{font-size:13.5px}</style>
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker>
+<marker id="arl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#cf222e"/></marker>
+</defs>
+<rect width="980" height="580" fill="#ffffff"/>
+<rect x="25.0" y="28" width="200" height="36" rx="8" fill="#f6f8fa" stroke="#d1d9e0"/>
+<text x="125" y="51" class="q" text-anchor="middle" fill="#1f2328">Mary picked up the football .</text>
+<rect x="240.0" y="28" width="200" height="36" rx="8" fill="#f6f8fa" stroke="#d1d9e0"/>
+<text x="340" y="51" class="q" text-anchor="middle" fill="#1f2328">Mary went to the garden .</text>
+<rect x="455.0" y="28" width="200" height="36" rx="8" fill="#f6f8fa" stroke="#d1d9e0"/>
+<text x="555" y="51" class="q" text-anchor="middle" fill="#1f2328">where is the football ?</text>
+<rect x="695.0" y="28" width="250" height="36" rx="8" fill="#f6f8fa" stroke="#d1d9e0" stroke-dasharray="5 4"/>
+<text x="820" y="51" class="q" text-anchor="middle" fill="#1f2328">so the football is in the garden .</text>
+<text x="820" y="18" class="lab" text-anchor="middle" fill="#59636e">true next sentence (target)</text>
+<text x="30" y="18" class="lab" fill="#59636e">story so far, one idea per sentence</text>
+<path d="M125,64 L125,92" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="70" y="94" width="110" height="40" rx="10" fill="#ddf4ff" stroke="#0969da" stroke-width="1.6"/><text x="125.0" y="114.0" class="b" text-anchor="middle" dominant-baseline="middle" fill="#1f2328">E</text>
+<path d="M340,64 L340,92" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="285" y="94" width="110" height="40" rx="10" fill="#ddf4ff" stroke="#0969da" stroke-width="1.6"/><text x="340.0" y="114.0" class="b" text-anchor="middle" dominant-baseline="middle" fill="#1f2328">E</text>
+<path d="M555,64 L555,92" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="500" y="94" width="110" height="40" rx="10" fill="#ddf4ff" stroke="#0969da" stroke-width="1.6"/><text x="555.0" y="114.0" class="b" text-anchor="middle" dominant-baseline="middle" fill="#1f2328">E</text>
+<path d="M820,64 L820,92" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="740" y="94" width="160" height="44" rx="10" fill="#ddf4ff" stroke="#0969da" stroke-width="1.6" stroke-dasharray="6 4"/><text x="820.0" y="112.0" class="b" text-anchor="middle" dominant-baseline="middle" fill="#1f2328">E<tspan baseline-shift="sub" font-size="72%">ema</tspan></text><text x="820.0" y="129.0" class="s" text-anchor="middle" fill="#59636e">EMA copy of E, no gradient</text>
+<path d="M125,134 L125,162" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="60.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="74.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="94.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="108.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="128.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="142.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="162.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="176.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<text x="201" y="182" class="m" fill="#1f2328">Z<tspan baseline-shift="sub" font-size="72%">1</tspan></text>
+<path d="M340,134 L340,162" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="275.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="289.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="309.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="323.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="343.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="357.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="377.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="391.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<text x="416" y="182" class="m" fill="#1f2328">Z<tspan baseline-shift="sub" font-size="72%">2</tspan></text>
+<path d="M555,134 L555,162" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="490.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="504.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="524.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="538.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="558.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="572.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="592.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="606.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<text x="631" y="182" class="m" fill="#1f2328">Z<tspan baseline-shift="sub" font-size="72%">3</tspan></text>
+<path d="M820,138 L820,162" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="755.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="769.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="789.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="803.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="823.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="837.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="857.0" y="166" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="871.0" y="166" width="14" height="22" rx="2" fill="#54aeff"/>
+<text x="896" y="182" class="m" fill="#1f2328">Z<tspan baseline-shift="sub" font-size="72%">4</tspan></text>
+<path d="M125,192 L125,260" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<text x="133" y="239.0" class="lab" fill="#59636e">write once</text>
+<rect x="40" y="262" width="200" height="66" rx="10" fill="#eaeef2" stroke="#57606a" stroke-width="1.6"/><text x="140.0" y="291.0" class="b" text-anchor="middle" dominant-baseline="middle" fill="#1f2328">delta-rule memory S</text><text x="140.0" y="308.0" class="s" text-anchor="middle" fill="#59636e">S ← S(I − βkkᵀ) + βvkᵀ</text>
+<rect x="250" y="156" width="410" height="42" rx="8" fill="none" stroke="#8250df" stroke-dasharray="6 4"/>
+<text x="352" y="214" class="lab" fill="#8250df">2-idea window, attended directly</text>
+<rect x="280" y="372" width="300" height="56" rx="10" fill="#fbefff" stroke="#8250df" stroke-width="1.6"/><text x="430.0" y="396.0" class="b" text-anchor="middle" dominant-baseline="middle" fill="#1f2328">P · causal idea predictor</text><text x="430.0" y="413.0" class="s" text-anchor="middle" fill="#59636e">8 layers, never sees a word</text>
+<path d="M340,198 L340,370" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<path d="M555,198 L555,370" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<path d="M240,295.0 Q240,295.0 278,390" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<text x="48" y="348" class="lab" fill="#59636e">read at every layer of P →</text>
+<path d="M580,400.0 L630,400.0" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="635.0" y="389" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="649.0" y="389" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="669.0" y="389" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="683.0" y="389" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="703.0" y="389" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="717.0" y="389" width="14" height="22" rx="2" fill="#54aeff"/>
+<rect x="737.0" y="389" width="14" height="22" rx="2" fill="#0969da"/>
+<rect x="751.0" y="389" width="14" height="22" rx="2" fill="#54aeff"/>
+<text x="776" y="405" class="m" fill="#1f2328">Ẑ<tspan baseline-shift="sub" font-size="72%">4</tspan></text>
+<path d="M730,383 C760,300 810,260 820,196" fill="none" stroke="#cf222e" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arl)"/>
+<text x="728" y="318" text-anchor="end" class="b" fill="#cf222e">L<tspan baseline-shift="sub" font-size="72%">JEPA</tspan></text>
+<text x="728" y="336" text-anchor="end" class="s" fill="#59636e">distance in idea space,</text>
+<text x="728" y="351" text-anchor="end" class="s" fill="#59636e">stop-gradient on the target</text>
+<path d="M700,411 L700,460" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="560" y="462" width="280" height="52" rx="10" fill="#dafbe1" stroke="#1a7f37" stroke-width="1.6"/><text x="700.0" y="484.0" class="b" text-anchor="middle" dominant-baseline="middle" fill="#1f2328">D · local erasing decoder</text><text x="700.0" y="501.0" class="s" text-anchor="middle" fill="#59636e">erases from the slots what each word said</text>
+<path d="M560,488.0 L452,488.0" fill="none" stroke="#8c959f" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="150" y="470" width="300" height="36" rx="8" fill="#f6f8fa" stroke="#1a7f37"/>
+<text x="300" y="493" class="q" text-anchor="middle" fill="#1f2328">so the football is in the garden .</text>
+<text x="300" y="524" class="s" text-anchor="middle" fill="#59636e">generated greedily; L<tspan baseline-shift="sub" font-size="72%">tok</tspan> = cross-entropy</text>
+<text x="40" y="558" class="s" fill="#59636e">idea Z = 4 slots, each a</text>
+<rect x="178" y="547" width="10" height="13" rx="2" fill="#0969da"/>
+<text x="193" y="558" class="s" fill="#59636e">key and a</text>
+<rect x="250" y="547" width="10" height="13" rx="2" fill="#54aeff"/>
+<text x="265" y="558" class="s" fill="#59636e">value; roles are learned, no labels. E, P and D are trained jointly from scratch.</text>
+</svg>

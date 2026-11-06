@@ -16,21 +16,13 @@ reason over them at the sentence level, and then express them in words?
 
 ## Architecture
 
-```
- sentence 1    sentence 2    sentence 3            sentence 4 (true)
-     │             │             │                       │
-   [ E ]         [ E ]         [ E ]                 [ E_ema ]  (slow copy of E, no gradient)
-     │             │             │                       │
-    Z_1           Z_2           Z_3                     Z_4  ◄──── JEPA loss ────┐
-     │             │             │                                               │
-     └──── write ──┴──► delta memory S ───┐                                      │
-                   │             │        │ read at every layer                  │
-                   └── 2-idea window ─────┴──► [ P : causal idea predictor ] ──► Ẑ_4
-                                                                                 │
-                                                       [ D : local decoder ] ◄───┘
-                                                                 │
-                                                       "so the football is in the garden ."
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/architecture-dark.svg">
+  <img alt="Idea-JEPA architecture: each sentence is encoded by E into an idea of 4 key/value slots; the oldest ideas are written once into a delta-rule memory, the last two are attended directly by the causal predictor P, which predicts the next idea; a JEPA loss compares it with the idea of the true next sentence encoded by an EMA copy of E, and a local erasing decoder D turns the predicted idea into words." src="docs/architecture-light.svg" width="100%">
+</picture>
+
+*A shortened bAbI task 2 story. The fact that Mary carries the football (Z₁) is outside the 2-idea window, so P has
+to read it from the memory to answer.*
 
 | component | what it does |
 |---|---|
