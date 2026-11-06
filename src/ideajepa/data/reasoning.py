@@ -713,7 +713,7 @@ def f1_useful_premises(prem_facts):
 
 
 def split_compound(doc, mode, vocab, rel_source="connector", rel_f1="useful"):
-    """Chantier 3 bis, step 1: the idea unit becomes the proposition. A restated deduction "since A , B ." becomes
+    """Step 1: the idea unit becomes the proposition. A restated deduction "since A , B ." becomes
       mode "conclusion": the proposition B alone ("so" + B in the clause form written), with the relation label
                          rel = "justified_by" and rel_ptr = index of the idea stating A, already in the story (no copy);
       mode "split":      two ideas, A ("so" + A, clause form 0; context only: train_w = 0, split_context = True) then B

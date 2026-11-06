@@ -1,4 +1,4 @@
-"""Phase 1 of the flow-matching chantier: does P predict the AVERAGE of the valid next deductions?
+"""Phase 1 of the flow-matching study: does P predict the AVERAGE of the valid next deductions?
 Teacher forcing on v2 val. For every deduction step t: V_t = valid unsaid deductions (generator's candidates),
 each encoded by E_ema as the mean over ALL its paraphrases (3 connectors x 2 forms); p_t = P's prediction.
 Cosines (JEPA normalisation: per-slot-normalised values, flattened, L2) to the best candidate, the centroid,

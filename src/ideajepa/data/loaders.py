@@ -34,7 +34,7 @@ def make_loader(cfg, split, shuffle, seed=0):
         docs = ArrayDocs(ROOT / dcfg["path"], dcfg.get(f"file_{split}", split), dcfg.get(f"max_docs_{split}"))
     else:
         docs, vocab_ = load_split(dcfg, split)
-        if dcfg.get("compound"):   # chantier 3 bis step 1: "conclusion" (B + pointer to A) | "split" (A then B)
+        if dcfg.get("compound"):   # Step 1: "conclusion" (B + pointer to A) | "split" (A then B)
             from .reasoning import split_compound
             if vocab_ is None:
                 vocab_ = torch.load(ROOT / dcfg["path"] / "meta.pt", weights_only=False)["vocab"]

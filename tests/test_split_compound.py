@@ -1,4 +1,4 @@
-"""Chantier 3 bis, step 1: data.compound (conclusion | split) turns a restated "since A , B ." into the proposition B
+"""Step 1: data.compound (conclusion | split) turns a restated "since A , B ." into the proposition B
 (+ pointer to A) or into A (context only) then B; the verifier scores a split A as context, not as a sentence."""
 from pathlib import Path
 

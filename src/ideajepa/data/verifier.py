@@ -115,7 +115,7 @@ def valid_next(family, premises, said, skip=False):
 
 
 def judge(family, premises, sentences, skip=False, context_mask=None):
-    """context_mask[i] = True: sentence i is context (an antecedent A re-stated by a proposition split, chantier 3 bis):
+    """context_mask[i] = True: sentence i is context (an antecedent A re-stated by a proposition split):
     verdict "context", neither scored nor a repeat, and it does not enter the said facts."""
     premises = [tuple(p) if isinstance(p, list) else p for p in premises]
     truth = derivable(family, premises)

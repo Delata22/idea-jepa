@@ -108,7 +108,7 @@ class IdeaPredictor(nn.Module):
         # p_role_emb: learned premise / deduction embedding added to every input idea (known in generation: all that
         # follows the connector is a deduction)
         self.role_emb = nn.Embedding(2, d) if cfg.get("p_role_emb", False) else None
-        # rel_cond (chantier 3 bis step 2): relation of each input idea (none / justified_by / sequence) + pointer to the
+        # rel_cond (step 2): relation of each input idea (none / justified_by / sequence) + pointer to the
         # justifying idea as a relative offset (0 = no pointer), added to its slot tokens
         self.rel_emb = nn.Embedding(N_REL, d) if cfg.get("rel_cond", False) else None
         self.rel_off_emb = nn.Embedding(N_OFF, d) if cfg.get("rel_cond", False) else None

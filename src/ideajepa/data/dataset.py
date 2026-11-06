@@ -302,7 +302,7 @@ class Collator:
             batch["idea_id"] = torch.tensor(extra["idea_id"])
         if any(i.get("fact") is not None for d in docs for i in d["ideas"]):   # loss.w_qoracle
             batch["qo_ptr"] = torch.tensor([p for d in docs for p in qoracle_ptr(d["ideas"])])
-        if any("rel" in i for d in docs for i in d["ideas"]):   # step 2 (chantier 3 bis): relation labels of each idea
+        if any("rel" in i for d in docs for i in d["ideas"]):   # step 2: relation labels of each idea
             REL = {None: 0, "none": 0, "justified_by": 1, "sequence": 2}
             batch["rel_id"] = torch.tensor([REL[i.get("rel")] for d in docs for i in d["ideas"]])
             batch["rel_off"] = torch.tensor([j - i["rel_ptr"] if i.get("rel_ptr", -1) >= 0 else 0
