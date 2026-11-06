@@ -51,7 +51,7 @@ def chunk_docs(docs, max_ideas, max_idea_len, max_tokens=None):
 class Collator:
     def __init__(self, m_prefix=3, full_prefix=False, max_prefix=None, surfaces=False, w2i=None, seed=0,
                  p_input_surface=None, since_surfaces=None, nce_positives="generator"):
-        """surfaces=True (stage A, synthetic v2, §30): the decoder is trained on the forms of each idea's ROLE
+        """surfaces=True (stage A, synthetic v2): the decoder is trained on the forms of each idea's ROLE
         ("so" forms for a deduction, premise forms for a premise) and the text stream / prefixes are built from
         the first role form (canonical stream, what the model reads back in generation); the encoder may read any
         surface of the fact tuple (cross-encoding). DAgger docs and ideas without a fact keep their reference.
@@ -300,14 +300,14 @@ class Collator:
                 batch[k] = t
         if extra["idea_id"][0] is not None:
             batch["idea_id"] = torch.tensor(extra["idea_id"])
-        if any(i.get("fact") is not None for d in docs for i in d["ideas"]):   # loss.w_qoracle (chantier 3 bis §5)
+        if any(i.get("fact") is not None for d in docs for i in d["ideas"]):   # loss.w_qoracle
             batch["qo_ptr"] = torch.tensor([p for d in docs for p in qoracle_ptr(d["ideas"])])
         if any("rel" in i for d in docs for i in d["ideas"]):   # step 2 (chantier 3 bis): relation labels of each idea
             REL = {None: 0, "none": 0, "justified_by": 1, "sequence": 2}
             batch["rel_id"] = torch.tensor([REL[i.get("rel")] for d in docs for i in d["ideas"]])
             batch["rel_off"] = torch.tensor([j - i["rel_ptr"] if i.get("rel_ptr", -1) >= 0 else 0
                                              for d in docs for j, i in enumerate(d["ideas"])])
-        if any("support" in d for d in docs):   # bAbI: supporting-fact annotation (ORACLE variants of P only, notes §35.11)
+        if any("support" in d for d in docs):   # bAbI: supporting-fact annotation (ORACLE variants of P only)
             batch["idea_support"] = torch.tensor([j in set(d.get("support", [])) for d in docs
                                                   for j in range(len(d["ideas"]))])
         if any(x is not None for x in extra["b_eff"]):  # synthetic v2: number of valid next steps (0 = premise)

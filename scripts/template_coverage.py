@@ -1,4 +1,4 @@
-"""Template coverage (chantier 3 bis, spec §2): for every family and role, are the templates the model meets at
+"""Template coverage: for every family and role, are the templates the model meets at
 EVALUATION a subset of the templates it sees in TRAINING, on each of its inputs and targets?
 Template of a sentence: deduction -> connector/clause form (so/f0, so/f1, then/f0 … tmt/f1, since/f0, since/f1);
 premise -> prem/f0, prem/f1.

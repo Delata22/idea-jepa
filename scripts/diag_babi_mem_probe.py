@@ -1,4 +1,4 @@
-"""bAbI qa2 memory-state probe (notes §35; protocol of diag_mem_state_probe2): ONE probe per memory layer of P,
+"""bAbI qa2 memory-state probe (protocol of diag_mem_state_probe2): ONE probe per memory layer of P,
 input [random projection (--dim) of the whole delta-rule state S ; word embedding of the entity], S = the state after the
 writes of every idea before the block that predicts the answer (one causal P pass on story + question). Targets: (a) the
 CURRENT place of each PERSON (last move); (b) the CURRENT place of each OBJECT picked up at least once (its carrier's place

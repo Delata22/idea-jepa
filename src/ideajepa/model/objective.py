@@ -53,10 +53,10 @@ def idea_losses(model: IdeaJEPA, batch, lc, p_gen=0.0, force_path=None, train=Tr
             kt, vt = k.detach(), v.detach()
     if model.cfg.get("plan_cond", False):   # plan variable: target o from E_ema, no gradient, no generator label
         batch["plan_o"] = plan_targets(vt, batch["doc_index"])
-    # loss.e_warmup_steps = N (notes §35.6): for the first N training steps E is trained by the reconstruction only: P
+    # loss.e_warmup_steps = N: for the first N training steps E is trained by the reconstruction only: P
     # reads detached slots (no gradient of the prediction losses into E) and InfoNCE is off (unless e_warmup_keep_nce)
     e_warm = bool(train and step is not None and step < lc.get("e_warmup_steps", 0))
-    # loss.p_input_noise = sigma (notes §35.28, idea bottleneck): Gaussian noise on the idea slots P READS (keys and values,
+    # loss.p_input_noise = sigma (idea bottleneck): Gaussian noise on the idea slots P READS (keys and values,
     # each in units of its batch standard deviation), training only; E's targets and the decoder are untouched
     sig = lc.get("p_input_noise", 0.0) if train else 0.0
     noisy = lambda t: t + sig * t.detach().float().std().to(t.dtype) * torch.randn_like(t) if sig > 0 else t
@@ -143,7 +143,7 @@ def idea_losses(model: IdeaJEPA, batch, lc, p_gen=0.0, force_path=None, train=Tr
 
     # L_mask: masked-idea prediction (stage A). One random deduction per document is masked; the bidirectional
     # predictor must recover its E_ema slots from the rest of the document.
-    # L_nce (stage B, §30): InfoNCE on E's slots, [k ; v/|v|] concatenated and L2-normalised (never keys alone).
+    # L_nce (stage B): InfoNCE on E's slots, [k ; v/|v|] concatenated and L2-normalised (never keys alone).
     # Positives: another surface of the same fact tuple, or the position a movement implies; negatives: the rest of
     # the batch (whole stories, so same-template facts on other objects of the same story are in it), with false
     # negatives (same fact / same implied position) masked.
@@ -151,7 +151,7 @@ def idea_losses(model: IdeaJEPA, batch, lc, p_gen=0.0, force_path=None, train=Tr
     if lc.get("w_nce", 0.0) > 0 and "pos_tok" in batch and not (e_warm and not lc.get("e_warmup_keep_nce", False)):
         L_nce = _info_nce(model, batch, k, v, lc.get("nce_temp", 0.1), lc.get("nce_neg", "batch"))
 
-    # L_transcr (stage C, §30): re-encoding of P's prediction. Greedy decoding of Ẑ (no gradient), E_ema of the decoded
+    # L_transcr (stage C): re-encoding of P's prediction. Greedy decoding of Ẑ (no gradient), E_ema of the decoded
     # sentence as a stop-gradient target, Ẑ pulled to it (JEPA distance). The gradient does not cross the decoding.
     L_transcr = torch.zeros((), device=dev)
     transcr_stats = None
@@ -208,7 +208,7 @@ def idea_losses(model: IdeaJEPA, batch, lc, p_gen=0.0, force_path=None, train=Tr
         V0 = V0 / V0.pow(2).sum(-1).mean(-1).clamp_min(1e-8).sqrt()[:, None, None]
 
     if train and lc.get("dec_noise", 0.0) > 0:
-        # loss.dec_noise = sigma (LDLM recipe, notes §35.6): Gaussian noise on the slot values the decoder reads (both
+        # loss.dec_noise = sigma (LDLM recipe): Gaussian noise on the slot values the decoder reads (both
         # paths), sigma in units of the batch standard deviation of those values (scalar, no gradient)
         V0 = V0 + lc["dec_noise"] * V0.detach().float().std().to(V0.dtype) * torch.randn_like(V0)
     logits, tr = model.decode(batch, K0, V0)
@@ -642,7 +642,7 @@ def transcr_eval_stats(model, batch, vocab, max_rows=256):
 
 
 def _memsep_loss(rows, batch, lc):
-    """F1 (§30): separate what P's memory WRITES for same-template facts about different entities (the negatives of
+    """F1: separate what P's memory WRITES for same-template facts about different entities (the negatives of
     stage B: same predicate and role, same story, different fact tuple). Per memory layer, centred cosine (batch mean
     of the written rows removed) between such pairs; L = mean over pairs and layers of relu(cos - tau)^2.
     memsep_on: "values" (default) | "keys" | "both"."""
@@ -669,7 +669,7 @@ def _memsep_loss(rows, batch, lc):
 
 
 def _qoracle_loss(P, batch, lc):
-    """Chantier 3 bis §5, oracle test of the query (a CEILING, strong supervision as in Memory Networks): when P predicts
+    """Oracle test of the query (a CEILING, strong supervision as in Memory Networks): when P predicts
     an F1 deduction "obj ... L", pull the query of its memory towards the key written for the premise that states obj's
     position (the useful antecedent, known to the generator; batch["qo_ptr"] = its position in the story, -1 = no target).
     Score of a past idea p for the query block n (which predicts idea n) = mean over (query slot, key slot, head) of
@@ -701,7 +701,7 @@ def _qoracle_loss(P, batch, lc):
 
 
 def _rel_loss(model, batch):
-    """Step 2 (chantier 3 bis §4): cross-entropy of P's relation head (none / justified_by / sequence) and pointer
+    """Step 2: cross-entropy of P's relation head (none / justified_by / sequence) and pointer
     head (relative offset to the justifying idea, 0 = none) on the deductions (DAgger context rows excluded)."""
     lr, lp = model.rel_logits()
     NI = lr.shape[0]
@@ -723,7 +723,7 @@ def _rel_loss(model, batch):
 
 @torch.no_grad()
 def plan_targets(vt, doc_index):
-    """Plan variable (notes §32.20): per idea row, o = argmax over the past ideas j < n of the story of
+    """Plan variable: per idea row, o = argmax over the past ideas j < n of the story of
     cos(Ē_ema(idea n), Ē_ema(idea j)), Ē = values per-slot normalised, flattened, L2 (diag_plan_var space); -1 for the
     first idea. Returns [NI] story indices."""
     z = F.normalize(F.normalize(vt.float(), dim=-1).flatten(1), dim=-1)

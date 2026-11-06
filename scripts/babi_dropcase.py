@@ -1,4 +1,4 @@
-"""bAbI qa2 (notes §35.18): accuracy by the state of the queried object at the question — (a) still carried; (b) put down,
+"""bAbI qa2: accuracy by the state of the queried object at the question — (a) still carried; (b) put down,
 the ex-carrier has not moved since; (c) put down, the ex-carrier moved afterwards — share of the errors per case, and in
 case (c) the share of errors answering the ex-carrier's CURRENT place. Second split: number of moves by OTHER persons between
 the last action on the object (take / drop / carrier's move while holding it) and the question (0, 1-2, 3+).

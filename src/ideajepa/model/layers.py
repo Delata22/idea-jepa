@@ -15,7 +15,7 @@ class MLP(nn.Module):
 
     def forward(self, x):
         h = self.fc(x)
-        if not getattr(self, "linear", False):   # linear = True: identity activation (P linear start, notes §35.27)
+        if not getattr(self, "linear", False):   # linear = True: identity activation (P linear start)
             h = F.gelu(h)
         return self.drop(self.proj(h))
 

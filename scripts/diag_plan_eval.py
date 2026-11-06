@@ -1,4 +1,4 @@
-"""Plan variable (notes §32.20), REFERENCE context (premises + reference deductions < j, prop view: restated sentences as
+"""Plan variable, REFERENCE context (premises + reference deductions < j, prop view: restated sentences as
 "so B"), per deduction step, two regimes kept apart:
   ref     o = the REFERENCE plan target (argmax over the past ideas of cos(Ē_ema(reference next idea), Ē_ema(idea j)),
           the training target; ceiling)

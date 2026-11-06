@@ -1,4 +1,4 @@
-"""Mémo §34.12: label-free InfoNCE (v3sd, in-batch negatives) — how many of an anchor's negatives are another surface of the
+"""Label-free InfoNCE (v3sd, in-batch negatives) — how many of an anchor's negatives are another surface of the
 SAME fact (a false negative), and how close they end up. Val batches of the run's own view; the generator's fact labels are
 used HERE only, to diagnose. Per family of the anchor: share of same-fact ideas among its in-batch negatives (other ideas of the
 batch), mean cos (nce_embed space [k ; v/|v|]) of same-fact pairs vs different-fact pairs of the same story vs other stories.

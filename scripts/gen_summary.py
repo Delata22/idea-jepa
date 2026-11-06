@@ -1,7 +1,7 @@
 """Summary of gen_eval jsonl files (free generation) per model: total, F1 immobile / moved objects (moved = the useful
 premise of the written object is a "goes", R.f1_useful_premises), F2, F3, error kinds, F1 chimeras (wrong "objin" fact whose
 object and location both come from valid candidates of the step, from different ones).
-Moved objects (§32.26): type of each WRONG F1 sentence on a moved object, first match in this order: (a) its INITIAL place;
+Moved objects: type of each WRONG F1 sentence on a moved object, first match in this order: (a) its INITIAL place;
 (b) an EARLIER place of its carrier (the person of the useful "goes": initial "at" and earlier "goes"); (c) the final place
 of another candidate object (chimera); (d) other. Per moved object of the story: omitted (no sentence about it), written
 wrong only, written right. Examples with the premises about the object and its carrier.

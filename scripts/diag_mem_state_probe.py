@@ -1,4 +1,4 @@
-"""Mémo §33.7: linear probe on the WHOLE memory state S (not the value read), F1, reference context, per memory layer.
+"""Linear probe on the WHOLE memory state S (not the value read), F1, reference context, per memory layer.
 At each F1 deduction step: S = state after the writes before the query block (delta recurrence, as diag_mem_read),
 flattened, reduced by a fixed random projection to --dim; one logistic probe per object name and per target: (a) CURRENT
 location of the object (given the premises), (b) INITIAL location. Half of the stories to fit, half to test. Accuracy for

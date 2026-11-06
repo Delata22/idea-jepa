@@ -1,4 +1,4 @@
-"""Mémo §34 (reliable version of the memory-state probe): ONE probe for all objects, per memory layer, input
+"""Reliable version of the memory-state probe: ONE probe for all objects, per memory layer, input
 [random projection of the whole state S ; token embedding of the object], fitted on --n_fit TRAIN F1 stories and tested on
 --n_test VAL stories. Targets: CURRENT location of the object (its final location given the premises) and its INITIAL
 location. Reference context; S = the delta-rule state after the writes of the ideas before the block that predicts a

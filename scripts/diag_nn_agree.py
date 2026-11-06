@@ -1,4 +1,4 @@
-"""Mémo §32.13: does the stage-C loop settle or oscillate? Agreement between the decoded sentence D(Ẑ) and the nearest
+"""Does the stage-C loop settle or oscillate? Agreement between the decoded sentence D(Ẑ) and the nearest
 neighbour of Ẑ among the encodings of the candidate facts, in the reference context. No training.
 
 Reference context (premises + reference deductions < j), P's prediction Ẑ, greedy decoding "so" forced (as gen_eval).
@@ -6,7 +6,7 @@ Candidates = the valid next deductions at step j (V.valid_next). Encoding of a f
 values per-slot normalised, flattened, L2 (diag_pred_cos space; --space flow = [k ; v/|v|]). NN = argmax cos(Ẑ, fact).
 agree = the decoded sentence parses to the NN fact. Reported overall, per family, and on the steps with >= 2 candidates
 (with a single candidate, agreement = "decoded valid"); also decoded_valid and nn_is_ref (NN = reference fact).
-Target (§32.13): >= 90 % the loop settles, <= 70 % it oscillates.
+Target: >= 90 % the loop settles, <= 70 % it oscillates.
 usage: uv run python scripts/diag_nn_agree.py <run> [<run> ...] [--n 30] [--space values|flow] [--summary out.md]
 """
 import argparse

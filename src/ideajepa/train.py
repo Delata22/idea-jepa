@@ -184,7 +184,7 @@ def main(argv=None):
     last_path = run_dir / "last.pt"
     resume = last_path.exists() and not (run_dir / "final.json").exists()
 
-    # train.data_seed (notes §35.26): seed of the training data stream (order of the stories, collator draws), separate from
+    # train.data_seed: seed of the training data stream (order of the stories, collator draws), separate from
     # train.seed (weight init, dropout, gen-path draws); default = train.seed (unchanged behaviour)
     data_seed = tc.get("data_seed", seed)
     train_loader = make_loader(cfg, "train", shuffle=True, seed=data_seed)
@@ -234,7 +234,7 @@ def main(argv=None):
         del ck_last
     nw = tc.get("num_workers", 3)
     accum = int(tc.get("grad_accum", 1))             # micro-batches per optimisation step (memory; same effective batch)
-    # train.curriculum_steps = N with data.curriculum_max_ideas = m (notes §35.26): the first N steps draw only from the stories
+    # train.curriculum_steps = N with data.curriculum_max_ideas = m: the first N steps draw only from the stories
     # of <= m ideas (their own stream, data seed + 7919), then the full stream starts from its beginning. Resume inside the
     # curriculum replays the short stream; the RNG restore targets the full stream's position only (approximate there).
     cur_n = int(tc.get("curriculum_steps", 0))
@@ -280,7 +280,7 @@ def main(argv=None):
         p_gen = tc.get("p_gen_max", 0.5) * min(1.0, step / max(1, tc.get("p_gen_ramp", 0.5) * tc["steps"]))
         # train.grad_accum = k: k micro-batches of train.batch_tokens per optimisation step (same effective batch as one
         # batch of k x batch_tokens); losses averaged; statistics from the last micro-batch
-        lin_n = int(tc.get("p_linear_steps", 0))   # notes §35.27: P's MLP activations linear for the first N steps
+        lin_n = int(tc.get("p_linear_steps", 0))   # P's MLP activations linear for the first N steps
         if lin_n and step in (start_step, lin_n):
             for b_ in model.P.blocks:
                 b_.mlp.linear = step < lin_n

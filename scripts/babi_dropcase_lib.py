@@ -1,4 +1,4 @@
-"""Object state at a bAbI qa2 question (notes §35.18), shared by babi_dropcase.py and babi_scale_report.py."""
+"""Object state at a bAbI qa2 question, shared by babi_dropcase.py and babi_scale_report.py."""
 MOVE = {"moved", "went", "journeyed", "travelled"}
 TAKE = {"got", "picked", "grabbed", "took"}
 DROP = {"dropped", "left", "discarded", "put"}

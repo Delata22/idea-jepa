@@ -1,4 +1,4 @@
-"""Recency heuristic in bAbI qa2 errors (notes §35.9): for the "c_other_actor_place" errors of a run (babi_outputs_test.jsonl),
+"""Recency heuristic in bAbI qa2 errors: for the "c_other_actor_place" errors of a run (babi_outputs_test.jsonl),
 is the actor whose final place was answered the LAST actor to have moved in the story? Compared with the same rate for a
 random other actor (chance) and with how often the true carrier is the last mover in the correct answers.
 usage: python scripts/babi_recency.py <picked run dir> [--data data/babi/qa2_10k] [--split test]"""

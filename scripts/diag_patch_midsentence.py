@@ -1,4 +1,4 @@
-"""§30 stage A measure: mid-sentence patching of the idea — does the content come from Z or from the local prefix?
+"""Stage A measure: mid-sentence patching of the idea — does the content come from Z or from the local prefix?
 
 At deduction steps with n >= 2 valid candidates (A = the reference fact, B = another valid candidate), the first k
 words of A's main form ("so" form 0) are forced, then the decoder completes the sentence greedily while reading

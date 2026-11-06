@@ -1,4 +1,4 @@
-"""Early indicator (notes §35.25, maths session): at snapshots of a bAbI qa2 run, accuracy on the "object still carried" case
+"""Early indicator: at snapshots of a bAbI qa2 run, accuracy on the "object still carried" case
 (a) on VALIDATION and on TRAIN (500 examples each, from <snapshot>/babi_outputs_{val,train}_early.jsonl written by
 babi_eval --out_suffix _early), and the train - validation gap on that case. Announced criterion: success if >= 0.9 with a
 gap <= 0.03 at step 3000; failure if the gap >= 0.10 from step 2000.

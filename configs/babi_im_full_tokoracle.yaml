@@ -1,6 +1,6 @@
 base: babi_im.yaml
 name: babi_im_tokoracle_ORACLE
-# ORACLE : sélection donnée par les étiquettes (bAbI « support »), notes §35.11 / §35.19 — NOT a recipe. Built on rung (1)
+# ORACLE : sélection donnée par les étiquettes (bAbI « support ») — NOT a recipe. Built on rung (1)
 # (window 2 + delta memory, 13h30 decision; file name kept for the queue): the keys / values of P's attention also contain
 # E's word states of the story question's SUPPORTING FACTS only, visible OUTSIDE the window from every block (the window
 # applies to the slots only; the word channel is causal per idea); slots keep the window of 2 and the memory.

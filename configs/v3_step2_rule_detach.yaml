@@ -1,5 +1,5 @@
 base: v3_step2_rule.yaml
 name: v3_step2_rule_detach
-# notes §32.21 test: rule arm with the relation / pointer heads on DETACHED P states (no gradient from L_rel into P);
+# Rule arm with the relation / pointer heads on DETACHED P states (no gradient from L_rel into P);
 # everything else identical. L_jepa back to ~1.1-1.3 -> cause (i) head gradient; stays ~2.2 -> cause (ii) rich input
 model: {rel_head_detach: true}

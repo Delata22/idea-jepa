@@ -1,4 +1,4 @@
-"""Stage A (§30): role forms / fact surfaces in the Collator, multi-form token loss, cross-encoding, word dropout."""
+"""Stage A: role forms / fact surfaces in the Collator, multi-form token loss, cross-encoding, word dropout."""
 from pathlib import Path
 
 import pytest
@@ -340,7 +340,7 @@ def test_transcr_guard_oracle(data, monkeypatch):
 
 
 def test_qoracle_pointer_and_loss(data):
-    """w_qoracle (chantier 3 bis §5): the pointer of an F1 deduction is the premise stating its object's position; the
+    """w_qoracle: the pointer of an F1 deduction is the premise stating its object's position; the
     score of idea p for the query block n uses the key block p + 1; the term trains P's memory query, is 0 when off,
     and a few steps on it raise its own accuracy."""
     vocab, w2i, docs = data

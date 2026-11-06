@@ -1,4 +1,4 @@
-"""Mémo §34.10: what does B3's per-token DeltaNet memory address when it writes the location of a MOVED object?
+"""What does B3's per-token DeltaNet memory address when it writes the location of a MOVED object?
 Reference text (val F1 stories): BOS + premises + reference deductions, cut just before the location word of each deduction
 about a moved object (its useful premise is a "goes"). At that position, per block and head, the query q (normalised) is
 compared to the keys k_t of all earlier tokens; top-1 token category:

@@ -1,4 +1,4 @@
-"""bAbI evaluation (notes §34.6): exact match of the answer word extracted from the generated deduction sentence, and the
+"""bAbI evaluation: exact match of the answer word extracted from the generated deduction sentence, and the
 rate of out-of-format outputs, per task, for Idea-JEPA models (P predicts the idea after the question, greedy decoding with
 "so" forced) and token-level references B0 / B3 (greedy continuation of "<story> <question> so" up to ".").
 Format expected (scripts/prepare_babi.py templates): qa1/qa2 "so X is in the <loc> ." ; qa3 "so the O was in the <loc> before
@@ -7,7 +7,7 @@ usage: python scripts/babi_eval.py <run> [<run> ...] [--split test|val] [--data 
 (--data defaults to the run's own data.path)
 Every run also gets <run>/babi_outputs_<split>.jsonl (--no_outputs to skip): one line per example with the question, the
 supporting facts (sentences), the expected answer, the generated sentence, correct / error class, number of ideas.
-Error classes (qa2 / qa3, answer in format but wrong; notes §35): a_initial_place (where the object was first picked up),
+Error classes (qa2 / qa3, answer in format but wrong): a_initial_place (where the object was first picked up),
 b_earlier_carrier_place (a place a carrier visited earlier while the object existed), c_other_actor_place (where another
 actor is at the end), d_other_place_in_story, e_place_not_in_story. Out-of-format outputs are counted apart.
 Length bins (ideas before the answer): "71-100" (beyond every qa2-10k training story, which stop at 70) and "101+" (qa3).
@@ -36,7 +36,7 @@ ap.add_argument("--no_outputs", action="store_true")
 ap.add_argument("--zero_mem", action="store_true", help="ablation: P's delta memories read a ZERO state (S = 0) at inference")
 ap.add_argument("--out_suffix", default="", help="suffix of the outputs file name")
 ap.add_argument("--swap_mem", action="store_true",
-                help="ablation (notes §35.16): the answer block of P reads, in every memory layer, the state S of ANOTHER story "
+                help="ablation: the answer block of P reads, in every memory layer, the state S of ANOTHER story "
                      "(the next one of the evaluated set, at its own answer position) instead of its own")
 a = ap.parse_args()
 DEV = os.environ.get("IDEAJEPA_DEVICE", "cuda")
@@ -74,7 +74,7 @@ def simulate(statements):
 
 
 def object_moves(statements, obj):
-    """qa3 (notes §35.35): number of moves of the object = moves of a person while carrying it."""
+    """qa3: number of moves of the object = moves of a person while carrying it."""
     holder, n = None, 0
     for s in statements:
         w = [x for x in s if x not in (".", "there", "back", "up", "down")]

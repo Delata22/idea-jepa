@@ -1,4 +1,4 @@
-"""Mémo §32.14 (a): is the decoder the source of the F2 errors at rank 3+ and of the F3 key/box confusions? No training.
+"""Is the decoder the source of the F2 errors at rank 3+ and of the F3 key/box confusions? No training.
 B-type models, F2 and F3, reference context (premises + reference deductions < j), by rank of the step (1 / 2 / 3+).
  (i)  autoencoding: D(E_ema(reference fact j, "so" form 0)) parses to that fact? rate per rank and per relation
       (F2: relation word of the fact; F3: predicate canopen / gets-key / gets-item).
@@ -11,7 +11,7 @@ B-type models, F2 and F3, reference context (premises + reference deductions < j
  (iii) for "idea right & sentence wrong": relation of NN_all (expected) vs relation of the decoded fact (written),
       with their frequencies among the training deductions.
  (iv) 5 examples with context.
- Complements (§32.14), on the "idea right" steps (NN_all valid), per family and rank:
+ Complements, on the "idea right" steps (NN_all valid), per family and rank:
  (v)   decoding error rate per bin of margin cos(Ẑ, NN_all) - cos(Ẑ, 2nd);
  (vi)  norm: Ẑ's values rescaled per slot to E's running slot norms (model.e_slot_norm), redecoded: sentence right?
  (vii) interpolation: Z_λ between E_ema(NN_all fact) (λ = 0) and Ẑ (λ = 1), per slot: keys normalize((1-λ) k_E + λ k̂),

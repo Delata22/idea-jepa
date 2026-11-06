@@ -1,4 +1,4 @@
-"""Chimera test (memo §32.6): are free-generation false facts built from pieces of VALID candidates of the same step?
+"""Chimera test: are free-generation false facts built from pieces of VALID candidates of the same step?
 For each sentence judged "false" in gen_eval jsonl files: the valid next deductions at that step (verifier state rebuilt
 from the model's own valid sentences); each component of the false fact (F2: person 1, relation, person 2; F1: object,
 place; F3: person, colour, item...) is looked up at the same position in the valid candidates with the same predicate.

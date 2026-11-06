@@ -1,4 +1,4 @@
 base: v3_step2_rule.yaml
 name: v3_step2_rule_wrel01
-# notes §32.21: rule arm with the relation / pointer loss at weight 0.1 (heads not detached)
+# Rule arm with the relation / pointer loss at weight 0.1 (heads not detached)
 loss: {w_rel: 0.1}

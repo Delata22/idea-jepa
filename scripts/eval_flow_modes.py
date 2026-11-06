@@ -8,7 +8,7 @@ and L2-normalised; the centroid is the mean of the candidates. For every sample 
   near_invalid cos(s, nearest invalid) > cos(s, nearest valid) and > --thr   (invalid = the story's
                deductions that are not valid here: already said, or not derivable yet)
   coverage     distinct candidates hit at this step / n
---thr defaults to 0.64, the cosine between paraphrases of one fact measured in phase 1 (RESEARCH_NOTES §28.2).
+--thr defaults to 0.64, the cosine between paraphrases of one fact measured in phase 1.
 usage: uv run python scripts/eval_flow_modes.py <run> [--sampler flow|khyp] [--n_samples 16] [--stories 300]
 """
 import argparse

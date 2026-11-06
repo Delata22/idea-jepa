@@ -1,4 +1,4 @@
 base: v3_step2_conn.yaml
 name: v3_step2_conn_w01
-# connector arm with the relation / pointer loss at weight 0.1 (causal test of the noise floor, notes §32.27)
+# connector arm with the relation / pointer loss at weight 0.1 (causal test of the noise floor)
 loss: {w_rel: 0.1}

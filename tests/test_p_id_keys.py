@@ -1,4 +1,4 @@
-"""IdeaPredictor p_id_keys (notes §35.9): entity codes in the first quarter of P's attention keys."""
+"""IdeaPredictor p_id_keys: entity codes in the first quarter of P's attention keys."""
 import torch
 
 from ideajepa.model.ideajepa import IdeaJEPA

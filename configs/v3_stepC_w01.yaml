@@ -1,6 +1,6 @@
 base: v3_stepB_w3_since.yaml
 name: v3_stepC_w01
-# §30 stage C on top of B w3 + "since" fix: re-encoding L_transcr = || norm(Ẑ) - sg(norm(E_ema(D_greedy(Ẑ)))) ||^2 on 25%
+# Stage C on top of B w3 + "since" fix: re-encoding L_transcr = || norm(Ẑ) - sg(norm(E_ema(D_greedy(Ẑ)))) ||^2 on 25%
 # of the deduction rows per step, from step 2000 (of 4000; w_transcr = 0 before); greedy decoding without gradient, P re-run
 # on detached E slots (gradient in P only); JEPA kept. Eval logs transcr_eval_valid / _valid_other / _ref.
 loss: {w_transcr: 0.1, transcr_frac: 0.25, transcr_max_len: 24, transcr_detach_E: true, transcr_start_step: 2000}

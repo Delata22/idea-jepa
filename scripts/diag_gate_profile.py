@@ -1,4 +1,4 @@
-"""§30 stage A measure: gate profile per token — where does the decoder read the idea?
+"""Stage A measure: gate profile per token — where does the decoder read the idea?
 
 Teacher forcing on the deductions of N val stories (the decoder's main rows: the "so" form under surfaces=True,
 else the original sentence). The residual-read gate g_t (trace["g"], the gate used to PREDICT token t) is averaged

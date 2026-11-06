@@ -1,4 +1,4 @@
 base: v3_plan_w3.yaml
 name: v3_plan_w3_h005
-# plan variable, pointer head NOT detached, pointer loss weight 0.05 (notes §32.27)
+# plan variable, pointer head NOT detached, pointer loss weight 0.05
 loss: {w_plan: 0.05}

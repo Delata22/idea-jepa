@@ -1,4 +1,4 @@
-"""Spec chantier 3 bis §2: evaluation templates ⊆ training templates, per family / role / model input (scripts/
+"""Evaluation templates ⊆ training templates, per family / role / model input (scripts/
 template_coverage.py). The base recipe passes; the checker finds the two known train/eval shifts (P's input on a
 single surface in A/B; restated "since" sentences absent from B's training)."""
 import sys
@@ -47,7 +47,7 @@ def test_compound_views_have_no_since(data):
 
 
 def test_p_input_covers_story_surfaces(data):
-    """Guard (notes §34.14): P's input at training must cover the story surfaces it reads at evaluation. The portable recipe
+    """Guard: P's input at training must cover the story surfaces it reads at evaluation. The portable recipe
     (dropout positives + psurf) passes; the same recipe without psurf is flagged (the shift that cost v3sd ~35 points)."""
     def p_missing(cfg):
         m = missing(cfg, data)

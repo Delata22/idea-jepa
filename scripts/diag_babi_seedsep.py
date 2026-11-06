@@ -1,4 +1,4 @@
-"""What separates a converging seed of (2c) from the others before step 3000? (notes §35.26) For each given snapshot:
+"""What separates a converging seed of (2c) from the others before step 3000? For each given snapshot:
 (a) cos between the delta-memory WRITE keys of "X takes O" and "X goes to L" ideas of the same story, same X vs different X,
     per layer (keys averaged over the idea's r slot tokens, heads concatenated; 200 validation stories);
 (b) gradient norms per module (E, D, O, each P block's attention / MLP / memory) on 8 fixed training batches, at the loss

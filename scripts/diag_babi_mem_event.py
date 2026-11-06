@@ -1,9 +1,9 @@
-"""EVENT-TIMED variant (notes §35.19): S taken right after (i) a DROP sentence -> place of the dropped object; (ii) a MOVE of a
+"""EVENT-TIMED variant: S taken right after (i) a DROP sentence -> place of the dropped object; (ii) a MOVE of a
 person carrying object(s) -> place of each carried object, and place of the carrier (same place, other entity embedding).
-CONTROL (§35.19): at the same carrier-move instants, the places of persons / objects NOT concerned by the move and located
+CONTROL: at the same carrier-move instants, the places of persons / objects NOT concerned by the move and located
 elsewhere ("ctrl_person", "ctrl_object"), and the rate at which the probe answers the just-written place for them (a probe
 that reads "the most recent place" regardless of the entity would fail them). Otherwise the protocol of diag_babi_mem_probe.
-bAbI qa2 memory-state probe (notes §35; protocol of diag_mem_state_probe2): ONE probe per memory layer of P,
+bAbI qa2 memory-state probe (protocol of diag_mem_state_probe2): ONE probe per memory layer of P,
 input [random projection (--dim) of the whole delta-rule state S ; word embedding of the entity], S = the state after the
 writes of every idea before the block that predicts the answer (one causal P pass on story + question). Targets: (a) the
 CURRENT place of each PERSON (last move); (b) the CURRENT place of each OBJECT picked up at least once (its carrier's place

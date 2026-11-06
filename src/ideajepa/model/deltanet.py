@@ -69,7 +69,7 @@ def delta_rule_chunked(q, k, v, beta, chunk=64, log_alpha=None):
 
 
 def entnet_scan(q, k, v, beta, W, scale=4.0, block=1):
-    """notes §34.3, EntNet-style write (Henaff et al. 2017): m slots per head with FIXED learned keys W [H, m, dh]; a token
+    """EntNet-style write (Henaff et al. 2017): m slots per head with FIXED learned keys W [H, m, dh]; a token
     writes every slot j through a content gate g_j = sigmoid(k.h^_j + k.w_j) (h^_j = normalised slot content) and a delta
     update h_j <- h_j + g_j beta (v - h_j) (gates of the tokens of one idea rescaled to sum <= 1 per slot); a token reads
     softmax_j(scale q.(w_j + h^_j)) weighted slot contents.
@@ -87,7 +87,7 @@ def entnet_scan(q, k, v, beta, W, scale=4.0, block=1):
         g = torch.sigmoid((hn * kt).sum(-1) + (Wn * kt).sum(-1))[..., None]     # [B, H, b, m, 1]
         # normalised gates: the r tokens of an idea write the same slots in parallel; their weights a_t = g_t beta_t
         # are rescaled so that sum_t a_t <= 1 per slot, so h <- (1 - A) h + sum_t a_t v_t is a convex combination
-        # (no overshoot of the target, maths session 29/09)
+        # (no overshoot of the target)
         aw = g * bt
         aw = aw / aw.sum(2, keepdim=True).clamp_min(1.0)
         entnet_scan.last_gate_sum = aw.sum(2).detach()
@@ -136,7 +136,7 @@ class DeltaMemory(nn.Module):
         self.ln = nn.LayerNorm(self.dh)
 
     def forward(self, x, kcode=None):
-        """kcode [B, H, T, c] (IdeaPredictor p_bow_keys with p_bow_where: mem, notes §35.15): ADDED to the first c dimensions
+        """kcode [B, H, T, c] (IdeaPredictor p_bow_keys with p_bow_where: mem): ADDED to the first c dimensions
         of each head's raw write key (before normalisation; the learned key is kept); queries unchanged."""
         B, T, d = x.shape
         q, k, v = self.qkv(x).view(B, T, 3, self.h, self.dh).permute(2, 0, 3, 1, 4)
@@ -169,7 +169,7 @@ class DeltaMemory(nn.Module):
             self.last_v = v.detach().float()
             self.last_beta = beta.detach().float()
         ov = getattr(self, "q_override", None)
-        if ov:   # inference oracle of the query (chantier 3 bis §5): q[b, :, qs:qs+n] := k[b, :, ks:ks+n]
+        if ov:   # inference oracle of the query: q[b, :, qs:qs+n] := k[b, :, ks:ks+n]
             q = q.clone()   # (mix < 1: normalise((1 - mix) q + mix k)); q_override_cos = cos(normal query, oracle key)
             cos = []
             for b_, qs, ks, n_, mix in ov:
@@ -203,7 +203,7 @@ class DeltaMemory(nn.Module):
             else:
                 o = delta_rule_chunked(q, k, v.float(), beta, log_alpha=log_alpha)
         ro = getattr(self, "read_override", None)
-        if ro:   # inference (notes §32.18): the tokens [qs, qs+n) read a GIVEN state S [H, dv, dk] (another story's, or 0)
+        if ro:   # inference: the tokens [qs, qs+n) read a GIVEN state S [H, dv, dk] (another story's, or 0)
             o = o.clone()
             for b_, qs, n_, S_ in ro:
                 o[b_, :, qs:qs + n_] = torch.einsum("hvk,htk->htv", S_.to(o.dtype), q[b_, :, qs:qs + n_].to(o.dtype))

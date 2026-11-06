@@ -1,4 +1,4 @@
-"""idea_memory "entnet" (notes §34.3): causal slot memory with fixed learned keys and content-gated delta writes."""
+"""idea_memory "entnet": causal slot memory with fixed learned keys and content-gated delta writes."""
 import torch
 
 from ideajepa.model.deltanet import DeltaMemory, entnet_scan

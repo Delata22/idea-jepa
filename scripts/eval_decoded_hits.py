@@ -1,4 +1,4 @@
-"""§29.1: a flow sample counts as a hit if it DECODES into a valid deduction (verifier), not on a cosine threshold.
+"""A flow sample counts as a hit if it DECODES into a valid deduction (verifier), not on a cosine threshold.
 
 Teacher forcing on v2 val deduction steps (n = 1 and n >= 2). For every step: S samples of the flow head
 (model.predict_flow: flow direction + the checkpoint's value norms, E if calibrated) and P's regression; every

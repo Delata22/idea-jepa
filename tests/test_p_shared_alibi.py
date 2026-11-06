@@ -1,4 +1,4 @@
-"""P depth / position variants (notes §35): p_shared = T (one block + its memory applied T times, pass embedding, distinct
+"""P depth / position variants: p_shared = T (one block + its memory applied T times, pass embedding, distinct
 output block) and p_pos = "alibi" (recency bias instead of the absolute idea-position embedding)."""
 import pytest
 import torch

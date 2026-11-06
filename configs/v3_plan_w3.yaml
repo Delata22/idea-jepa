@@ -1,6 +1,6 @@
 base: v3_stepB_w3_prop.yaml
 name: v3_plan_w3
-# notes §32.20, PLAN VARIABLE on the prop base (B w3): target o = argmax over the past ideas of cos(Ē_ema(next idea),
+# PLAN VARIABLE on the prop base (B w3): target o = argmax over the past ideas of cos(Ē_ema(next idea),
 # Ē_ema(idea j)) (no gradient, no generator label); P receives the input slots of idea o (+ a "plan" type embedding)
 # added to the block that predicts the next idea; pointer head (softmax over the past ideas, CE to o) computed from a
 # P pass WITHOUT the plan. Inference: o drawn from the head (T = 1) or argmax, then prediction, then greedy decoding.

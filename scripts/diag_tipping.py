@@ -1,4 +1,4 @@
-"""Mémo §32.21 (4): tipping point of the decoding along Ẑ -> E_ema(nearest INVALID fact), reference context, no training.
+"""Tipping point of the decoding along Ẑ -> E_ema(nearest INVALID fact), reference context, no training.
 Per step with a valid decoding of P's prediction Ẑ: g = the not-entailed fact (one argument of an entailed fact swapped,
 as diag_decode_verify's invalid pool) nearest to Ẑ (diag_pred_cos space); Z_λ = per slot, keys normalize((1-λ) k̂ + λ k_g),
 values normalize((1-λ) v̂/|v̂| + λ v_g/|v_g|) × ((1-λ)|v̂| + λ|v_g|), λ = 0, 0.05, ..., 1; tipping λ* = the first λ whose

@@ -1,4 +1,4 @@
-"""§32.21 (3): cos of the memory KEYS written by P between DIFFERENT facts of the SAME template (predicate, role) in the
+"""Cos of the memory KEYS written by P between DIFFERENT facts of the SAME template (predicate, role) in the
 same story, per layer (raw and centred by the batch mean), val batches of the run's own data view, teacher forcing
 (plan models: the training plan targets). Compares plan (the plan enters the written keys) vs prop.
 usage: uv run python scripts/diag_mem_keys.py <run> [<run> ...] [--batches 8] [--summary out.md]

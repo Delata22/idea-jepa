@@ -1,4 +1,4 @@
-"""§30 stage A measure: is the idea space separated from the form?
+"""Stage A measure: is the idea space separated from the form?
 
 For the deductions of N val stories, every surface of the fact is encoded by E (or E_ema with --ema):
   same_deduction   cos between two different deduction templates of the same fact (3 connectors x 2 forms)
@@ -7,7 +7,7 @@ For the deductions of N val stories, every surface of the fact is encoded by E (
   diff_other       cos between surfaces of deductions of different stories
   pos_vs_goes      F1: cos("X goes to L", "X is in L") vs control "X is in L'" (another place)
   pos_vs_takes     F1: cos("X takes O", "the O is in L_X") vs control "the O is in L'"
-reported for keys, values (per-slot normalised) and the flow space [k ; v/|v|], per family. Targets (§30):
+reported for keys, values (per-slot normalised) and the flow space [k ; v/|v|], per family. Targets:
 same_deduction 0.64 -> > 0.85 while diff_* stay low (~0.31).
 usage: uv run python scripts/diag_paraphrase_cos.py <run> [--stories 200] [--ema]
 """

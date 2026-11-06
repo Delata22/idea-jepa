@@ -1,4 +1,4 @@
-"""Chantier 3 bis §5 (notes §32.12): ORACLE OF THE QUERY AT INFERENCE, no training. Does addressing drive content?
+"""ORACLE OF THE QUERY AT INFERENCE, no training. Does addressing drive content?
 
 F1 only. "Useful premise" of an object o (the generator has no antecedent in F1): the LAST premise that fixed o's
 location, i.e. its initial "the o is in L", or the last "X goes to L" of the person X carrying o at that time (taking

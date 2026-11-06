@@ -1,6 +1,6 @@
 base: babi_b0.yaml
 name: babi_utw
-# "UT-mots" (notes §35, ablation facts vs words): one transformer block with full causal attention over the WORDS of the
+# "UT-mots" (ablation facts vs words): one transformer block with full causal attention over the WORDS of the
 # concatenated story, applied T times (pass embedding) + one distinct output block; no idea encoder, no slots, no delta
 # memory. Variant (i): same d and T as our shared P (2d); set model.shared=T to match. Variant (ii) (same parameter
 # count): widen d. PREPARED: not to be run before the end of our scale.

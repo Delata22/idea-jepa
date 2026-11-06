@@ -112,12 +112,12 @@ class IdeaPredictor(nn.Module):
         # justifying idea as a relative offset (0 = no pointer), added to its slot tokens
         self.rel_emb = nn.Embedding(N_REL, d) if cfg.get("rel_cond", False) else None
         self.rel_off_emb = nn.Embedding(N_OFF, d) if cfg.get("rel_cond", False) else None
-        # plan_cond (notes §32.20, plan variable): the input slots of a past idea o are added, with a "plan" type
+        # plan_cond (plan variable): the input slots of a past idea o are added, with a "plan" type
         # embedding, to the block that predicts the next idea
         self.plan_emb = nn.Parameter(torch.randn(r, d) * 0.02) if cfg.get("plan_cond", False) else None
         self.plan_inject = cfg.get("plan_inject", "input")        # "input" (every block, memory included) | "output"
         self.plan_out = MLP(d) if cfg.get("plan_cond", False) and self.plan_inject == "output" else None
-        # p_shared = T > 0 (notes §35, Universal-Transformer-style depth): ONE block (and its memory) applied T times, with a
+        # p_shared = T > 0 (Universal-Transformer-style depth): ONE block (and its memory) applied T times, with a
         # learned pass embedding added before each pass, then one distinct output block; pred_layers is ignored.
         # self.blocks / self.mems list the T passes (the same module repeated) + the output block.
         self.p_shared = int(cfg.get("p_shared", 0))
@@ -136,18 +136,18 @@ class IdeaPredictor(nn.Module):
         if self.p_pos == "alibi":
             self.register_buffer("alibi_slopes", torch.tensor([2.0 ** (-8.0 * (i + 1) / h) for i in range(h)]),
                                  persistent=False)
-        # p_id_keys (notes §35.9, weak supervision: word classes): in every attention block of P, the first quarter of each
+        # p_id_keys (weak supervision: word classes): in every attention block of P, the first quarter of each
         # head's KEY dimensions is replaced by entity codes of the idea at that position: sub-block A (1/8) = the first
         # proper name of the sentence, sub-block B (1/8) = its object noun (zeros if absent); codes = learned per-head
         # projections (shared by the layers) of the model's word embedding. Queries stay fully learned. Word ids come from
         # model_config (p_id_name_ids / p_id_obj_ids, resolved from the word lists of the config).
-        # p_bow_keys (notes §35.10, the RECIPE candidate; no word list): the same quarter of key dimensions receives a learned
+        # p_bow_keys (the RECIPE candidate; no word list): the same quarter of key dimensions receives a learned
         # per-head projection of the MEAN word embedding of the sentence (all its words; the question too).
         # p_id_keys is a DIAGNOSTIC (hard-coded word classes: ceiling "what if the reading channel had identity").
         self.bow_keys = bool(cfg.get("p_bow_keys", False))
         assert not (self.bow_keys and cfg.get("p_id_keys")), "p_bow_keys and p_id_keys are exclusive"
         self.id_keys = bool(cfg.get("p_id_keys")) or self.bow_keys
-        # p_bow_where: "attn" (default: keys of P's attention) | "mem" (notes §35.15: write keys of the delta memory only)
+        # p_bow_where: "attn" (default: keys of P's attention) | "mem" (write keys of the delta memory only)
         self.bow_where = cfg.get("p_bow_where", "attn")
         assert self.bow_where in ("attn", "mem")
         assert not (self.bow_where == "mem" and cfg.get("idea_memory", "none") == "none"), "p_bow_where mem needs a memory"
@@ -164,7 +164,7 @@ class IdeaPredictor(nn.Module):
             self.id_b = nn.Linear(d, h * self.id_sub, bias=False)
             self.register_buffer("id_name_ids", torch.tensor(cfg["p_id_name_ids"], dtype=torch.long), persistent=False)
             self.register_buffer("id_obj_ids", torch.tensor(cfg["p_id_obj_ids"], dtype=torch.long), persistent=False)
-        # p_word_kv (notes §35.10-11, variant (c)): the keys / values of P's attention also contain E's WORD states of past
+        # p_word_kv (variant (c)): the keys / values of P's attention also contain E's WORD states of past
         # ideas (contextualised in their sentence, after E's blocks), with a "word" type embedding and the idea position;
         # queries stay the slots; causal per idea (position n sees the words of the ideas at input positions <= n).
         # "all": every past idea exposes its words; "support": ORACLE, only the bAbI supporting facts do (labels).
@@ -191,7 +191,7 @@ class IdeaPredictor(nn.Module):
         # k_hyp > 1 (phase 2 control against the averaging problem): K hypotheses per next idea
         # + a score per hypothesis (multiple-choice learning). forward() returns the best-scored one and
         # keeps all of them in self.last_hyp = (pk [B, Nm, K, r, ds], pv [...], scores [B, Nm, K]).
-        # p_head_dropout (notes §35.20, small models): dropout on P's states before its regression head
+        # p_head_dropout (small models): dropout on P's states before its regression head
         self.head_drop = nn.Dropout(cfg.get("p_head_dropout", 0.0))
         self.K = int(cfg.get("k_hyp", 1))
         self.head = nn.Linear(d, 2 * ds * self.K)
@@ -777,13 +777,13 @@ class IdeaJEPA(nn.Module):
         self.plan_k = nn.Linear(d, d) if cfg.get("plan_cond", False) else None
         self.plan_mode = "sample"            # inference: "sample" (T = 1) | "argmax"; batch["plan_o"] overrides
         self.plan_gen = None                 # torch.Generator for sampling
-        init_weights(self, std=cfg.get("init_std", 0.02))   # model.init_std (notes §35.27: 0.01 = initial weights x 0.5)
+        init_weights(self, std=cfg.get("init_std", 0.02))   # model.init_std (0.01 = initial weights x 0.5)
         self.E_ema = copy.deepcopy(self.E)
         for p in self.E_ema.parameters():
             p.requires_grad_(False)
 
     def train(self, mode=True):
-        """E_ema (the JEPA target) always runs without dropout (enc_dropout: SimCSE positives, notes §34)."""
+        """E_ema (the JEPA target) always runs without dropout (enc_dropout: SimCSE positives)."""
         super().train(mode)
         self.E_ema.eval()
         return self
@@ -914,7 +914,7 @@ class IdeaJEPA(nn.Module):
         return mk[pos], mv[pos]
 
     def _predict_plan(self, k, v, batch, role, rel):
-        """Plan variable (notes §32.20). Pass 1 WITHOUT plan -> pointer logits over the past ideas (self.plan_logits,
+        """Plan variable. Pass 1 WITHOUT plan -> pointer logits over the past ideas (self.plan_logits,
         [B, Nm, Nm], -inf outside 0 <= j < n); o = batch["plan_o"] (per idea row, story index, -1 = none) if given,
         else drawn from the head (plan_mode). Pass 2 WITH o -> prediction."""
         di = batch["doc_index"]

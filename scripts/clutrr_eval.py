@@ -1,4 +1,4 @@
-"""CLUTRR evaluation (notes §34.6): free generation of as many deductions as the target has (1 for the "answer" variant,
+"""CLUTRR evaluation: free generation of as many deductions as the target has (1 for the "answer" variant,
 the proof length for "chain"), after the story + question (goal_cond models: the question is the goal G). Measures per k:
 answer accuracy (the LAST generated sentence parses to the query fact (A, target, B): "so B is the target of A ."),
 relation-only accuracy (right relation word, any entities), out-of-format rate; chain variant: precision of the intermediate

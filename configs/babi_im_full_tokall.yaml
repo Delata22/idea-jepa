@@ -1,6 +1,6 @@
 base: babi_im.yaml
 name: babi_im_tokall
-# notes §35.11 / §35.19, variant (c) without oracle (k = N), on rung (1) (window 2 + delta memory; file name kept for the
+# Variant (c) without oracle (k = N), on rung (1) (window 2 + delta memory; file name kept for the
 # queue): E's word states of EVERY past idea in the keys / values of P's attention, visible outside the window (causal per
 # idea); slots keep the window of 2 and the memory. Run only if the oracle version reaches < 5 % test error.
 model:

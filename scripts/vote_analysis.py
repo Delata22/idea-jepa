@@ -1,4 +1,4 @@
-"""Why does the vote fail while the oracle reaches 96-97 %? (notes §34.8), from gen_eval --log_cands files (K samples of the
+"""Why does the vote fail while the oracle reaches 96-97 %? From gen_eval --log_cands files (K samples of the
 SAME idea Ẑ, decoder sampling at T = 0.7: P is deterministic, so all the diversity comes from the decoder).
 Per step where the GREEDY decoding of Ẑ is wrong: (i) is there a valid sample among the K; (ii) the frequency rank of the
 most frequent VALID fact among the samples (1st, 2nd, 3rd+, tied / single); (iii) share of the K samples that carry the SAME

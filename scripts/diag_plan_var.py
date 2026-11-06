@@ -1,4 +1,4 @@
-"""Mémo §32.18 B: a "plan variable" in the DATA? Encoder only (E_ema of a trained run), no predictor, no decoder.
+"""A "plan variable" in the DATA? Encoder only (E_ema of a trained run), no predictor, no decoder.
 For every reference deduction n of a val story: o = argmax over the past ideas j < n (story surfaces) of
 cos(Ē(idea n), Ē(idea j)), Ē = E_ema values of the sentence, per-slot normalised, flattened, L2; the deduction itself is
 encoded in its "so" form 0 (the same form as the candidates below).

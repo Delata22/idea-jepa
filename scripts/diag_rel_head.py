@@ -1,4 +1,4 @@
-"""Step 2 (chantier 3 bis §4, notes §32.13): accuracy of P's relation head against the majority-class frequency, and
+"""Step 2: accuracy of P's relation head against the majority-class frequency, and
 confusion matrix, per family, teacher forcing on the val stories of the run's own data view (compound + rel_source).
 Rows = deductions. Relation classes none / justified_by / sequence; pointer accuracy on the justified_by rows.
 usage: uv run python scripts/diag_rel_head.py <run> [<run> ...] [--batches 20] [--summary out.md]

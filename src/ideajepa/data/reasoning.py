@@ -621,7 +621,7 @@ if __name__ == "__main__":
     build(Path(a.out), n_train=a.n_train, mode=a.mode, marker=a.marker, dense=a.dense)
 
 
-# ------------------------------------------------------------------ surfaces of a fact (stage A, §30)
+# ------------------------------------------------------------------ surfaces of a fact (stage A)
 DEDUCIBLE = {"objin", "rel", "canopen", "gets"}                     # predicates that can be written as deductions
 PREMISE_PREDS = {"objin", "at", "rel", "has", "opens", "holds", "about", "goes", "takes", "drops"}
 SO_TEMPLATES = [2, 3]                                                # "so" + clause form 0 / 1

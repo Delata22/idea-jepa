@@ -1,4 +1,4 @@
-"""Plan variable (notes §32.20): targets = nearest past idea in E_ema space; the pointer head never sees o; o drives P."""
+"""Plan variable: targets = nearest past idea in E_ema space; the pointer head never sees o; o drives P."""
 from pathlib import Path
 
 import pytest

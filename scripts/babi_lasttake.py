@@ -1,4 +1,4 @@
-"""bAbI qa2 recency test on the "take" template (notes §35.17): accuracy split by whether the TRUE carrier of the queried
+"""bAbI qa2 recency test on the "take" template: accuracy split by whether the TRUE carrier of the queried
 object (the last person who took it) is the author of the LAST take of the story (any object), and by whether that last
 take is of the queried object itself; share of the errors in each case. Uses <run>/babi_outputs_test.jsonl.
 usage: python scripts/babi_lasttake.py <picked run> [...] [--data data/babi/qa2_10k]"""

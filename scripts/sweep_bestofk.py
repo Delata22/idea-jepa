@@ -1,4 +1,4 @@
-"""§29.2: best-of-K sweep in free generation — does choosing between modes help, and can we choose?
+"""Best-of-K sweep in free generation — does choosing between modes help, and can we choose?
 
 For each model (the flow head, and P as control) and K in --Ks, runs scripts/gen_eval.py with K candidates per
 step and a selector:

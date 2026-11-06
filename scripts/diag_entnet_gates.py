@@ -1,9 +1,9 @@
-"""EntNet memory gates on bAbI qa2 (notes §35.22-23), no training, on --n validation stories:
+"""EntNet memory gates on bAbI qa2, no training, on --n validation stories:
 (1) per memory layer / head / slot, the DOMINANT entity (person or object named by the ideas that open its write gate
     strongly: gate >= the slot's 75th percentile over all statement ideas) and the share of slots whose dominant entity
     covers >= 50 % of those strong writes;
 (2) mean write gate of the slots dominated by an OBJECT o at the moves of o's CARRIER (while carrying o) vs at the moves of
-    OTHER persons while o is carried (criterion of the maths session: >= 2x).
+    OTHER persons while o is carried (criterion: >= 2x).
 usage: python scripts/diag_entnet_gates.py <run> [--n 200] [--json out.json]"""
 import argparse, collections, json, os, sys
 import numpy as np

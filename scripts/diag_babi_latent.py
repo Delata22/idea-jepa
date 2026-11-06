@@ -1,4 +1,4 @@
-"""Where does P's predicted answer idea sit, relative to its target (notes §35.15-16)? For the answer position of bAbI
+"""Where does P's predicted answer idea sit, relative to its target? For the answer position of bAbI
 stories: cos(Ẑ, E_ema(answer sentence)) on flattened [k ; v/|v|] slots, TRAIN vs VAL, correct vs wrong decoded answers
 (from <run>/babi_outputs_<split>.jsonl written by babi_eval), decomposed into the "answer" part (the row space of a linear
 6-class place probe fitted on the train targets E_ema(answer)) and its orthogonal complement; plus the mean cos between two

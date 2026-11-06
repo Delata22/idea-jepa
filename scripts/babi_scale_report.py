@@ -1,4 +1,4 @@
-"""Report of the bAbI scale runs (30/09, notes §35): one row per run from runs/babi_scale/<run>.{val,test}.json, the run's
+"""Report of the bAbI scale runs: one row per run from runs/babi_scale/<run>.{val,test}.json, the run's
 final.json / log / train.csv and <picked run>/babi_outputs_test.jsonl.
 Columns: parameters, duration, L_jepa (validation) at step 1000, validation curve (every snapshot), picked step, test
 error, accuracy by length bin (71+ = longer than any training story), error classes; then 4 correct + 4 wrong outputs
@@ -71,7 +71,7 @@ for n in a.runs:
         outs = Path(t["run"]) / "babi_outputs_test.jsonl"
         recs = [json.loads(x) for x in outs.read_text().splitlines()] if outs.exists() else []
         if recs and fam == "qa2":
-            # notes §35.18: object state at the question, (a) carried / (b) dropped, carrier stayed / (c) dropped, carrier left
+            # Object state at the question, (a) carried / (b) dropped, carrier stayed / (c) dropped, carrier left
             import torch
             from babi_dropcase_lib import analyse
             dd = torch.load(f"{t['data']}/test.pt", weights_only=False)

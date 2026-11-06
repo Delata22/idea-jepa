@@ -27,8 +27,8 @@ ap.add_argument("--rel_oracle", action="store_true", help="rel_cond models, diag
                 "(relation, pointer) input label is replaced by the generator rule's (antecedent in F2/F3, useful premise in F1) "
                 "computed on the fact written, instead of the head's prediction")
 ap.add_argument("--plan_mode", default="sample", choices=["sample", "argmax", "novelty", "novelty_far", "head_nonrep", "nonrep_uniform"],
-                help="plan_cond models (notes §32.20): the plan idea o is drawn from the pointer head (T = 1) or its argmax; "
-                     "novelty (§32.22): for every past idea j, Ẑ(j) = P(context, o = j); drop the j whose Ẑ(j) has cos > "
+                help="plan_cond models: the plan idea o is drawn from the pointer head (T = 1) or its argmax; "
+                     "novelty: for every past idea j, Ẑ(j) = P(context, o = j); drop the j whose Ẑ(j) has cos > "
                      "--novelty_cos with an idea already in the context; draw uniformly among the others (novelty) or take the "
                      "one farthest from every idea said (novelty_far); none left: the least close")
 # phase 2: where the next idea comes from, and best-of-K selection
@@ -259,7 +259,7 @@ def gen_ideajepa(model, premises, n_ded, m_prefix=3, max_len=48, oracle=None, ct
             ok = [V.judge(ctx[0], ctx[1], said_txt + [w(o)])[-1]["verdict"].startswith("valid") for o in outs]
             choice = ok.index(True) if any(ok) else 0
         elif len(outs) > 1 and a.select == "vote":
-            # notes §34.3: drop the samples that restate a DEDUCTION already written (premises never count), then the
+            # Drop the samples that restate a DEDUCTION already written (premises never count), then the
             # most frequent fact among the others (tie: the first sampled); none left: the first sample
             said = {V.parse_sentence(w(x))[0] for x in story[len(premises):]}
             facts = [V.parse_sentence(w(o))[0] for o in outs]
@@ -346,7 +346,7 @@ NOVELTY_RNG = __import__("random").Random(a.seed)
 
 @torch.no_grad()
 def nonrep_plan(model, k, v, batch, story, n_prem):
-    """§32.28 (corrected novelty): drop the j whose Ẑ(j) has cos > --novelty_cos with a DEDUCTION already written
+    """Corrected novelty: drop the j whose Ẑ(j) has cos > --novelty_cos with a DEDUCTION already written
     (premises do not count); head_nonrep: first j by the head's probability among the kept; nonrep_uniform: uniform."""
     n = len(story)
     ded = story[n_prem:]
@@ -379,7 +379,7 @@ def nonrep_plan(model, k, v, batch, story, n_prem):
 
 @torch.no_grad()
 def novelty_plan(model, k, v, batch, story):
-    """§32.22: choice of the plan idea by novelty of the conditioned prediction (see --plan_mode)."""
+    """Choice of the plan idea by novelty of the conditioned prediction (see --plan_mode)."""
     n = len(story)
     tok, lens = encode_ideas(model, story)
     _, ve = model.E_ema(tok, lens)

@@ -1,4 +1,4 @@
-"""Mémo §32.18 A: what does P read in its memory? Inference only, reference context (premises + reference deductions < j,
+"""What does P read in its memory? Inference only, reference context (premises + reference deductions < j,
 story surfaces), one P pass per deduction step; the query block n = len(context) predicts the next idea.
  (1) constancy of the queries: mean cos between queries at fixed (layer, head, slot), across the steps of a story vs
      across stories (random pairs).

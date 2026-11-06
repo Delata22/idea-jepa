@@ -1,6 +1,6 @@
 base: v3_stepB_w3_split.yaml
 name: v3_stepB_w3_split_dropnce
-# notes §34 (portable recipe): stage-B InfoNCE with LABEL-FREE positives: the same sentence re-encoded by E under another
+# Portable recipe: stage-B InfoNCE with LABEL-FREE positives: the same sentence re-encoded by E under another
 # dropout mask (SimCSE); negatives = the other ideas of the batch; false negatives = identical sentences only (no fact /
 # template labels). Same temperature (0.1) and weight (0.3) as B w3; E_ema (JEPA target) without dropout
 data: {nce_positives: dropout}

@@ -1,4 +1,4 @@
-"""Mémo §34 (goal arm, diagnostic): does the memory READ query of the upper layers depend on what the lower layers read?
+"""Goal arm, diagnostic: does the memory READ query of the upper layers depend on what the lower layers read?
 For each memory layer l >= 1, reference context (val stories, all families), P's query at every token: normal pass vs a pass
 where the memory OUTPUT of every layer < l is zeroed. Mean cos(q_l normal, q_l ablated) over tokens (normalised queries,
 as used by the read), and the same for the queries of the deduction-predicting blocks only; plus the change of layer l's

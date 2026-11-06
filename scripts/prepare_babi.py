@@ -1,4 +1,4 @@
-"""bAbI v1.2 qa1-3 -> Idea-JEPA documents (notes §34.6 protocol).
+"""bAbI v1.2 qa1-3 -> Idea-JEPA documents.
 One example per question: the story statements before the question (earlier questions are not statements) are premise
 ideas, one per sentence; the question is an idea of its own (step "question"); the answer is rewritten as ONE deduction
 sentence with a fixed template per task (written by us, documented here and in the report):

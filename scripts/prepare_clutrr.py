@@ -1,4 +1,4 @@
-"""CLUTRR (EMNLP 2019 release, authors' Google Drive archive) -> Idea-JEPA documents (notes §34.6 protocol).
+"""CLUTRR (EMNLP 2019 release, authors' Google Drive archive) -> Idea-JEPA documents.
 Sets: data_089907f8 (train k = 2, 3; test k = 2..10) = "train23", data_db9b8f04 (train k = 2, 3, 4) = "train234". Clean stories
 only (task 1.x). Text input: one idea per sentence (the story text as written), lower-cased, words and punctuation.
 Names -> entity identifiers drawn at random PER STORY (ent_1 .. ent_20, same rule for every model), to avoid the unseen-names

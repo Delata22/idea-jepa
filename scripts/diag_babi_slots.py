@@ -1,4 +1,4 @@
-"""bAbI diagnostics without training (notes §35 step 2), for an Idea-JEPA run on qa1 / qa2:
+"""bAbI diagnostics without training, for an Idea-JEPA run on qa1 / qa2:
 (1) slot probe: are actor / action / object / place linearly decodable from each of E's slots (and from all slots), on
     held-out stories? A high accuracy in ONE slot = the attribute has a stable place across sentences;
 (2) identity: cosine between the "actor" slot (best actor probe) of two ideas of the SAME story about the same person vs two

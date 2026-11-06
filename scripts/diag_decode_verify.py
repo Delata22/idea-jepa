@@ -111,7 +111,7 @@ def stories():
             continue
         prem = [i["tokens"] for i in doc["ideas"] if i.get("depth", -1) < 0]
         ded = [i for i in doc["ideas"] if i.get("depth", -1) >= 0]
-        # antecedent A of a restated "since A , B" (reinsertion measure, spec 3 bis v2 §3), before any --strip / --split
+        # antecedent A of a restated "since A , B" (reinsertion measure), before any --strip / --split
         ded = [{**i, "_A": V.parse_sentence(" ".join(vocab[t] for t in i["tokens"]))[1]} if i.get("restated") else i
                for i in ded]
         if a.fit_split and len(doc["ideas"]) + sum(bool(i.get("restated")) for i in ded) > a.fit_split:
@@ -279,7 +279,7 @@ def run_one(run):
                         idea_acc[(cond,) + key]["N"].append(1)
                         for m_, v_ in (row or {}).items():
                             idea_acc[(cond,) + key][m_].append(v_)
-                # reinsertion measure (spec 3 bis v2 §3), condition (b), steps j >= 1 of F2/F3: "after" = right after a
+                # reinsertion measure, condition (b), steps j >= 1 of F2/F3: "after" = right after a
                 # restated reference sentence "since A , B", "other" = the other steps (control). A wrong output
                 # "continues the previous step" if the generator's rule gives it the same licensing premise as the
                 # previous reference fact (= A after a reinsertion: "as if A were the last of the chain"); B said again

@@ -1,4 +1,4 @@
-"""Data-loading duplicate check (notes §34.30, step 0): does collation in worker processes (train.num_workers 3)
+"""Data-loading duplicate check: does collation in worker processes (train.num_workers 3)
 show the model duplicated stories or duplicated random draws, compared with in-process collation (num_workers 0)?
 
 No training. For each path, the first N training batches exactly as train.py builds them (worker_iterator for

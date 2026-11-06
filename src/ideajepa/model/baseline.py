@@ -37,7 +37,7 @@ class GPT(nn.Module):
         self.kind = cfg["model"]  # "b0" | "b1"
         self.emb = nn.Embedding(cfg["vocab_size"], d)
         self.pos = nn.Embedding(cfg["max_seq"] if self.kind in ("b0", "b3") else cfg["max_window"], d)
-        # shared = T > 0 ("UT-mots", notes §35): ONE block applied T times with a learned pass embedding, then one distinct
+        # shared = T > 0 ("UT-mots"): ONE block applied T times with a learned pass embedding, then one distinct
         # output block (the words-level twin of IdeaPredictor p_shared); n_layers is ignored
         self.shared = int(cfg.get("shared", 0))
         mk = (lambda: MemBlock(d, cfg["n_heads"])) if self.kind == "b3" else \

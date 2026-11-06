@@ -1,4 +1,4 @@
-"""Stage A (§30) summary: the three diagnostics on the stage-A seeds vs the base reference, as one markdown table.
+"""Stage A summary: the three diagnostics on the stage-A seeds vs the base reference, as one markdown table.
 
 Reads, for each run dir, paraphrase_cos.json, gate_profile_recon.json and patch_midsentence.json (the base uses the
 *_base_ref.json copies). Prints mean ± std over seeds.
